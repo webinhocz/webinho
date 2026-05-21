@@ -439,6 +439,10 @@
     [data-r][data-d="5"] { transition-delay:.5s; }
     [data-r][data-d="6"] { transition-delay:.6s; }
 
+    .hero-card-wrap {
+      display:flex; justify-content:center;
+    }
+
     /* ─── HAMBURGER ──────────────────────────────────────── */
     .ham {
       display:none; flex-direction:column; gap:5px;
@@ -496,7 +500,7 @@
       /* Hero */
       #hero { padding:100px 24px 56px; }
       .hero-inner { grid-template-columns:1fr; gap:0; }
-      .hero-inner > div:last-child { display:none; } /* skrýt dashboard kartu */
+      .hero-card-wrap { display:none !important; } /* skrýt dashboard kartu */
       .hero-h1 { font-size:clamp(42px,11vw,64px); letter-spacing:-2px; }
       .hero-sub { font-size:16px; margin-bottom:40px; }
       .hero-btns { flex-direction:column; align-items:flex-start; gap:14px; }
@@ -585,7 +589,7 @@
     </div>
 
     <!-- RIGHT — dashboard card -->
-    <div style="display:flex;justify-content:center">
+    <div class="hero-card-wrap">
       <div class="dash-card">
         <div class="dc-header">
           <div class="dc-dots">
