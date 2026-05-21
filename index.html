@@ -101,7 +101,7 @@
     /* ─── HERO ───────────────────────────────────────────── */
     #hero {
       min-height: 100vh; display:flex; align-items:center;
-      position:relative; overflow:hidden; padding:120px 64px 80px;
+      position:relative; overflow:hidden; padding:120px 64px 120px;
     }
     #pCanvas { position:absolute; inset:0; z-index:0; pointer-events:none; }
     .glow1 {
@@ -181,9 +181,8 @@
       animation:floatC 5s ease-in-out infinite;
     }
     @keyframes floatC {
-      0%,100%{transform:translateY(0) rotate(0deg)}
-      33%{transform:translateY(-14px) rotate(.4deg)}
-      66%{transform:translateY(-7px) rotate(-.3deg)}
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
     }
     .dc-header {
       display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;
