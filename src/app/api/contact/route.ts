@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   const { jmeno, email, telefon, typ_projektu, zprava } = await req.json();
 
@@ -10,7 +8,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Chybí povinná pole" }, { status: 400 });
   }
 
+  if (!process.env.RESEND_API_KEY) {
+    console.error("RESEND_API_KEY is not set");
+    return NextResponse.json({ error: "Chyba při odesílání emailu" }, { status: 500 });
+  }
+
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "Webinho <noreply@webinho.cz>",
       to: ["webinho@seznam.cz"],
