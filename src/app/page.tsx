@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import ValueProps from "@/components/ValueProps";
 import Integrations from "@/components/Integrations";
 import OurStory from "@/components/OurStory";
+import Team from "@/components/Team";
 import Portfolio from "@/components/Portfolio";
 import BeforeAfter from "@/components/BeforeAfter";
 import ElyseeResults from "@/components/ElyseeResults";
@@ -37,6 +38,9 @@ export default function Home() {
         </Reveal>
         <Reveal>
           <OurStory />
+        </Reveal>
+        <Reveal>
+          <Team />
         </Reveal>
         <Reveal>
           <Process />

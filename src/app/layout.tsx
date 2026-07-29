@@ -19,10 +19,26 @@ const sora = Sora({
   subsets: ["latin", "latin-ext"],
 });
 
+const description =
+  "Digitální vizitka vašeho byznysu. Najdou vás, ať hledají váš obor, nebo přímo vás. Nezávazná konzultace zdarma.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.webinho.cz"),
   title: "Webinho | Digitální vizitka vašeho byznysu",
-  description:
-    "Digitální vizitka vašeho byznysu. Najdou vás, ať hledají váš obor, nebo přímo vás. Nezávazná konzultace zdarma.",
+  description,
+  openGraph: {
+    title: "Webinho | Digitální vizitka vašeho byznysu",
+    description,
+    url: "https://www.webinho.cz",
+    siteName: "Webinho",
+    locale: "cs_CZ",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webinho | Digitální vizitka vašeho byznysu",
+    description,
+  },
   verification: {
     other: {
       "seznam-wmt": "LREqvLkNUSxccyYyb6ghAk3jL4Hnmnpt",
