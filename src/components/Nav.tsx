@@ -39,7 +39,7 @@ export default function Nav() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#" onClick={() => setOpen(false)}>
-          <Logo className="text-lg sm:text-xl" />
+          <Logo className="h-7 sm:h-8" />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
