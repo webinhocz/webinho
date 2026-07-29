@@ -12,10 +12,10 @@ export default function OurStory() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink-soft">
               Začalo to jednoduše. V okolí jsme měli známé, kteří potřebovali web.
-              Udělali jsme jim dobrou práci a doporučili nás dál. Řekli jsme si,
-              že bychom takhle mohli pomoct mnohem víc byznysům. Dnes to bereme
-              jako reálnou práci, ne jako brigádu vedle. Pomáháme podnikatelům a
-              majitelům firem být vidět na internetu.
+              Udělali jsme jim dobrou práci a doporučili nás dál. Řekli jsme si, že
+              bychom takhle mohli pomoct mnohem víc byznysům. <strong className="font-semibold text-ink">Dnes to bereme
+              jako reálnou práci, ne jako brigádu vedle.</strong> Pomáháme podnikatelům
+              a majitelům firem být vidět na internetu.
             </p>
           </div>
           <div className="glass flex aspect-[4/3] items-center justify-center rounded-[1.75rem] text-sm font-medium text-ink-soft">

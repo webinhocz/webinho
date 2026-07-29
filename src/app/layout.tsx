@@ -3,6 +3,8 @@ import { Inter, Sora, Geist } from "next/font/google";
 import "./globals.css";
 import AmbientBackground from "@/components/AmbientBackground";
 import ScrollSpine from "@/components/ScrollSpine";
+import CookieConsent from "@/components/CookieConsent";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -18,9 +20,14 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Webinho | Digitální vizitka vašeho byznisu",
+  title: "Webinho | Digitální vizitka vašeho byznysu",
   description:
     "Digitální vizitka vašeho byznysu. Najdou vás, ať hledají váš obor, nebo přímo vás. Nezávazná konzultace zdarma.",
+  verification: {
+    other: {
+      "seznam-wmt": "LREqvLkNUSxccyYyb6ghAk3jL4Hnmnpt",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -34,9 +41,11 @@ export default function RootLayout({
       className={cn("dark h-full", inter.variable, sora.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-full flex flex-col bg-bg text-ink antialiased">
+        <GoogleAnalytics />
         <AmbientBackground />
         <ScrollSpine />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

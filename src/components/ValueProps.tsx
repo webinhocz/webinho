@@ -4,19 +4,34 @@ const ITEMS = [
   {
     icon: Globe,
     title: "Web šitý na míru",
-    text: "Ne šablona, ne obyčejná vizitka. Postavíme vám web na míru s fotkami, službami i atmosférou vašeho podnikání.",
+    text: (
+      <>
+        Ne šablona, ne obyčejná vizitka. <strong className="font-semibold">Postavíme vám web na míru</strong>{" "}
+        s fotkami, službami i atmosférou vašeho podnikání.
+      </>
+    ),
     tone: "gradient-ink glow-blue text-white",
   },
   {
     icon: Search,
     title: "Najdou váš web na Googlu i Seznamu",
-    text: "Když někdo hledá váš obor nebo přímo vaši firmu, potřebujete se tam objevit. Bez webu jde zákazník ke konkurenci.",
+    text: (
+      <>
+        Když někdo hledá váš obor nebo přímo vaši firmu, potřebujete se tam objevit.{" "}
+        <strong className="font-semibold text-ink">Bez webu jde zákazník ke konkurenci.</strong>
+      </>
+    ),
     tone: "glass text-ink",
   },
   {
     icon: Send,
     title: "Web, který pracuje za vás",
-    text: "Nejen reprezentuje. Díky poptávkovému formuláři vám přivádí nové klienty 24 hodin denně.",
+    text: (
+      <>
+        Nejen reprezentuje. Díky poptávkovému formuláři vám přivádí{" "}
+        <strong className="font-semibold text-ink">nové klienty 24 hodin denně</strong>.
+      </>
+    ),
     tone: "glass text-ink",
   },
 ];

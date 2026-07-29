@@ -1,20 +1,43 @@
-import { MessageSquareText, PenTool, Rocket } from "lucide-react";
+import { ChevronDown, Handshake, MessageSquareText, PenTool, Rocket } from "lucide-react";
 
 const STEPS = [
   {
     icon: MessageSquareText,
     title: "Nezávazná poptávka",
-    text: "Napíšete nám o svém byznysu. Ozveme se s orientační cenou.",
+    text: (
+      <>Napíšete nám pár slov o svém byznysu a jak si nový web představujete.</>
+    ),
   },
   {
     icon: PenTool,
     title: "Návrh na míru",
-    text: "Připravíme design a strukturu podle vašeho oboru.",
+    text: (
+      <>
+        Připravíme orientační návrh designu a struktury podle vašeho oboru —{" "}
+        <strong className="font-semibold text-ink">zatím bez řešení ceny</strong>.
+      </>
+    ),
+  },
+  {
+    icon: Handshake,
+    title: "Odsouhlasení ceny",
+    text: (
+      <>
+        Podle rozsahu návrhu si spolu <strong className="font-semibold text-ink">odsouhlasíme finální
+        cenu</strong> a jdeme do toho.
+      </>
+    ),
   },
   {
     icon: Rocket,
     title: "Spuštění a poptávky",
-    text: "Web nasadíme online. Od prvního dne vás reprezentuje a sbírá poptávky.",
+    text: (
+      <>
+        Web dokončíme a nasadíme online.{" "}
+        <strong className="font-semibold text-ink">Od prvního dne vás reprezentuje a sbírá
+        poptávky.</strong>
+      </>
+    ),
   },
 ];
 
@@ -29,16 +52,24 @@ export default function Process() {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-3">
-          {STEPS.map((s) => (
-            <div key={s.title}>
-              <div className="glow-blue flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-soft text-blue">
+        <div className="mx-auto mt-14 max-w-xl">
+          {STEPS.map((s, i) => (
+            <div key={s.title} className={`relative flex gap-6 ${i < STEPS.length - 1 ? "pb-10" : ""}`}>
+              {i < STEPS.length - 1 && (
+                <div className="absolute left-6 top-12 bottom-0 w-px bg-gradient-to-b from-blue to-violet" />
+              )}
+              <div className="glow-blue z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-soft text-blue">
                 <s.icon className="h-5 w-5" strokeWidth={2} />
               </div>
-              <h3 className="mt-4 font-heading text-lg font-bold text-ink">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.text}</p>
+              <div className="pt-1.5">
+                <h3 className="font-heading text-lg font-bold text-ink">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.text}</p>
+              </div>
             </div>
           ))}
+          <div className="flex w-12 justify-center text-violet">
+            <ChevronDown className="h-5 w-5" strokeWidth={2.5} />
+          </div>
         </div>
       </div>
     </section>

@@ -1,13 +1,35 @@
-"use client";
+import { ScrollReelTestimonials } from "@/components/ui/scroll-reel-testimonials";
 
-import { Star } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
+const REVIEWS = [
+  {
+    quote:
+      "Doporučuji webinho, pomohli mi sestavit landing page pro kampaň během chvíle — s kompletním nastavením Meta Pixelu, Google Tagu i platební brány. Byl jsem velmi spokojený.",
+    author: "David Kittel, EFA",
+    image: "/portfolio/kittel-consult.jpg",
+    alt: "Web finančního poradce Davida Kittela",
+  },
+  {
+    quote:
+      "Lukáš mi pomohl sestavit můj web podle mých představ během krátké doby a do posledního detailu. Doporučuji!",
+    author: "Petr Pustelník — Pustelník Coach",
+    image: "/portfolio/pustelnik-coach.jpg",
+    alt: "Web Pustelník Coach",
+  },
+  {
+    quote:
+      "Kluky z webinha mohu jen doporučit. Pomohli nám sestavit web pro naši oboru a brzy plánujeme udělat další.",
+    author: "Miloš Malucha — Obora Víno",
+    image: "/portfolio/obora-vino.jpg",
+    alt: "Web Obora Víno",
+  },
+  {
+    quote:
+      "S Lukášem se známe delší dobu, a když jsem potřeboval nový web, věděl jsem, na koho se obrátit. 10/10.",
+    author: "Didaprax",
+    image: "/portfolio/didaprax.jpg",
+    alt: "Web Didaprax",
+  },
+];
 
 export default function Testimonials() {
   return (
@@ -18,31 +40,11 @@ export default function Testimonials() {
           <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
             Co říkají klienti
           </h2>
-          <p className="mt-3 text-sm text-ink-soft">
-            Sbíráme reference od klientů. Brzy je najdete přímo tady.
-          </p>
+          <p className="mt-3 text-sm text-ink-soft">Pár slov od lidí, se kterými jsme spolupracovali.</p>
         </div>
 
-        <div className="relative mt-10">
-          <Carousel opts={{ align: "start", loop: true }} className="mx-auto max-w-4xl">
-            <CarouselContent>
-              {Array.from({ length: 5 }).map((_, i) => (
-                <CarouselItem key={i} className="sm:basis-1/2 lg:basis-1/3">
-                  <div className="flex h-full flex-col justify-between rounded-[1.75rem] border border-dashed border-line bg-bg/60 p-7">
-                    <div className="flex gap-1 text-amber-300">
-                      {Array.from({ length: 5 }).map((_, j) => (
-                        <Star key={j} className="h-4 w-4 fill-current" />
-                      ))}
-                    </div>
-                    <p className="mt-4 text-sm text-ink-soft">Reference brzy doplníme.</p>
-                    <div className="mt-6 h-2 w-24 rounded bg-line" />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="glass -left-4 border-line text-ink lg:-left-12" />
-            <CarouselNext className="glass -right-4 border-line text-ink lg:-right-12" />
-          </Carousel>
+        <div className="mt-10 flex justify-center">
+          <ScrollReelTestimonials testimonials={REVIEWS} />
         </div>
       </div>
     </section>

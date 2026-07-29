@@ -2,22 +2,13 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  ArrowLeft,
-  Check,
-  CircleHelp,
-  Globe,
-  RefreshCw,
-  ShoppingCart,
-} from "lucide-react";
+import { ArrowLeft, Check, Globe, RefreshCw } from "lucide-react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 const PROJECT_TYPES = [
   { id: "Nový web", label: "Nový web", icon: Globe },
   { id: "Redesign", label: "Redesign", icon: RefreshCw },
-  { id: "E-shop", label: "E-shop", icon: ShoppingCart },
-  { id: "Nevím", label: "Nevím", icon: CircleHelp },
 ];
 
 const STEPS = ["Typ projektu", "O byznysu", "Kontakt"];
@@ -30,6 +21,7 @@ export default function ContactForm() {
   const [typProjektu, setTypProjektu] = useState("");
   const [obor, setObor] = useState("");
   const [maWeb, setMaWeb] = useState<"ano" | "ne" | "">("");
+  const [webUrl, setWebUrl] = useState("");
 
   function goTo(next: number, dir: number) {
     setDirection(dir);
@@ -45,7 +37,9 @@ export default function ContactForm() {
     const zprava = [
       data.zprava,
       obor && `Obor podnikání: ${obor}.`,
-      maWeb && `Aktuální web: ${maWeb === "ano" ? "ano, ale chce to zlepšit." : "zatím žádný."}`,
+      typProjektu === "Redesign"
+        ? webUrl && `Současný web: ${webUrl}.`
+        : maWeb && `Aktuální web: ${maWeb === "ano" ? "ano, ale chce to zlepšit." : "zatím žádný."}`,
     ]
       .filter(Boolean)
       .join(" ");
@@ -79,7 +73,9 @@ export default function ContactForm() {
             Nezávazná poptávka
           </h2>
           <p className="mt-3 text-sm text-ink-soft">
-            Projděte tři krátké kroky. Ozveme se s návrhem na míru.
+            Projděte tři krátké kroky a řekněte nám svou představu o webu. Ozveme se vám zpět a na
+            základě toho připravíme <strong className="font-semibold text-ink">návrh na míru — teprve pak
+            řešíme cenu</strong>. Celé je to nezávazné.
           </p>
         </div>
 
@@ -109,7 +105,10 @@ export default function ContactForm() {
                 <Check className="h-7 w-7" strokeWidth={2.5} />
               </div>
               <h3 className="mt-5 font-heading text-xl font-bold text-ink">Díky za poptávku</h3>
-              <p className="mt-2 text-sm text-ink-soft">Ozveme se co nejdřív.</p>
+              <p className="mt-2 text-sm text-ink-soft">
+                Ozveme se vám co nejdřív a domluvíme si detaily. Na základě toho připravíme
+                nezávazný návrh na míru.
+              </p>
             </div>
           ) : (
             <AnimatePresence mode="wait" custom={direction}>
@@ -172,25 +171,41 @@ export default function ContactForm() {
                         className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
                       />
                     </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-sm font-medium text-ink">Máte už web?</label>
-                      <div className="flex gap-3">
-                        {(["ano", "ne"] as const).map((v) => (
-                          <button
-                            key={v}
-                            type="button"
-                            onClick={() => setMaWeb(v)}
-                            className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-semibold transition-colors ${
-                              maWeb === v
-                                ? "border-blue bg-blue-soft text-blue"
-                                : "border-line bg-bg/40 text-ink-soft hover:text-ink"
-                            }`}
-                          >
-                            {v === "ano" ? "Ano" : "Ne"}
-                          </button>
-                        ))}
+                    {typProjektu === "Redesign" ? (
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-medium text-ink">
+                          Odkaz na váš současný web{" "}
+                          <span className="font-normal text-ink-soft">(volitelné)</span>
+                        </label>
+                        <input
+                          type="url"
+                          value={webUrl}
+                          onChange={(e) => setWebUrl(e.target.value)}
+                          placeholder="https://vasfirma.cz"
+                          className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
+                        />
                       </div>
-                    </div>
+                    ) : (
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-sm font-medium text-ink">Máte už nějaký web?</label>
+                        <div className="flex gap-3">
+                          {(["ano", "ne"] as const).map((v) => (
+                            <button
+                              key={v}
+                              type="button"
+                              onClick={() => setMaWeb(v)}
+                              className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-semibold transition-colors ${
+                                maWeb === v
+                                  ? "border-blue bg-blue-soft text-blue"
+                                  : "border-line bg-bg/40 text-ink-soft hover:text-ink"
+                              }`}
+                            >
+                              {v === "ano" ? "Ano" : "Ne"}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="mt-8 flex items-center justify-between">
                     <button

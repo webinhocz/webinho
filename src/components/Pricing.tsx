@@ -102,9 +102,10 @@ export default function Pricing() {
         </div>
 
         <p className="mt-8 max-w-3xl text-xs leading-relaxed text-ink-soft">
-          Ceny jsou orientační. Přesnou nabídku vždy šijeme na míru podle rozsahu a potřeb vašeho
-          byznysu. Primárně tvoříme nové weby jako digitální vizitku s poptávkovým formulářem.
-          Redesign i e-shop dokážeme zrealizovat, řešíme je individuálně podle poptávky.
+          Ceny jsou orientační. <strong className="font-semibold text-ink">Přesnou nabídku vždy šijeme na
+          míru</strong> podle rozsahu a potřeb vašeho byznysu. Primárně tvoříme nové weby jako digitální
+          vizitku s poptávkovým formulářem. Redesign i e-shop dokážeme zrealizovat, řešíme je
+          individuálně podle poptávky.
         </p>
       </div>
     </section>

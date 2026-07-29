@@ -20,25 +20,6 @@ export const CLIENTS: ClientProject[] = [
     photo: "/portfolio/detektor-pasti.jpg",
   },
   {
-    name: "Kittel Consult",
-    category: "Finanční poradenství",
-    description: "Osobní web finančního poradce s kalkulačkami a e-bookem zdarma.",
-    url: "https://kittelconsult.cz",
-    accent: "#c9a15a",
-    bg: "#0c1524",
-    logo: "/loga/kittel-consult.png",
-    photo: "/portfolio/kittel-consult.jpg",
-  },
-  {
-    name: "Oprav dům bez úroku",
-    category: "Rekonstrukce",
-    description:
-      "Leadová stránka pro rekonstrukce rodinných domů s formulářem na ověření nároku.",
-    url: "https://opravdumbezuroku.cz",
-    accent: "#2f8a3c",
-    bg: "#f4f6f2",
-  },
-  {
     name: "Pustelník Coach",
     category: "Fitness & trénink",
     description:
