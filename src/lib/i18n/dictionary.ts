@@ -180,6 +180,13 @@ export const dictionary = {
       reviews: [
         {
           quote:
+            "S Lukášem jsem spokojená. Pomohl mi dotáhnout každý detail webu přesně podle mých představ a navíc během dvou pracovních dnů vytvořil landing page pro naši kampaň. Díky novému webu prodávám poukazy online a získávám nové poptávky na kadeřnické služby. Doporučuji.",
+          author: "M. Stavařová — Élysée Garden Studio",
+          image: "/portfolio/elysee-garden-stavarova.jpg",
+          alt: "Majitelka Élysée Garden Studio",
+        },
+        {
+          quote:
             "Doporučuji webinho, pomohli mi sestavit landing page pro kampaň během chvíle — s kompletním nastavením Meta Pixelu, Google Tagu i platební brány. Byl jsem velmi spokojený.",
           author: "David Kittel, EFA",
           image: "/portfolio/kittel-consult.jpg",
@@ -271,7 +278,8 @@ export const dictionary = {
       step2Title: "Kontaktní údaje",
       fieldJmeno: "Jméno *",
       fieldEmail: "E-mail *",
-      fieldTelefon: "Telefon",
+      fieldTelefon: "Telefon *",
+      fieldTelefonPlaceholder: "123 456 789",
       fieldZprava: "Zpráva",
       fieldZpravaPlaceholder: "Cokoliv, co bychom měli vědět navíc.",
       sending: "Odesílám…",
@@ -531,6 +539,13 @@ export const dictionary = {
       reviews: [
         {
           quote:
+            "I'm happy with Lukáš. He helped me nail every last detail of the website exactly the way I pictured it, and even built a landing page for our campaign within two working days. Thanks to the new website, I now sell vouchers online and get new hairdressing inquiries. I recommend him.",
+          author: "M. Stavařová — Élysée Garden Studio",
+          image: "/portfolio/elysee-garden-stavarova.jpg",
+          alt: "Owner of Élysée Garden Studio",
+        },
+        {
+          quote:
             "I recommend webinho — they helped me put together a landing page for my campaign in no time, with full setup of Meta Pixel, Google Tag, and a payment gateway. I was very happy with the result.",
           author: "David Kittel, EFA",
           image: "/portfolio/kittel-consult.jpg",
@@ -622,7 +637,8 @@ export const dictionary = {
       step2Title: "Contact details",
       fieldJmeno: "Name *",
       fieldEmail: "Email *",
-      fieldTelefon: "Phone",
+      fieldTelefon: "Phone *",
+      fieldTelefonPlaceholder: "123 456 789",
       fieldZprava: "Message",
       fieldZpravaPlaceholder: "Anything else we should know.",
       sending: "Sending…",

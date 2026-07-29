@@ -12,6 +12,11 @@ const PROJECT_ICONS: Record<string, typeof Globe> = {
   Redesign: RefreshCw,
 };
 
+const DIAL_CODES = [
+  "+420", "+421", "+48", "+49", "+43", "+44", "+33", "+34",
+  "+39", "+31", "+1", "+353", "+41", "+46", "+47", "+45",
+];
+
 export default function ContactForm() {
   const { t, locale } = useLocale();
   const [status, setStatus] = useState<Status>("idle");
@@ -22,6 +27,7 @@ export default function ContactForm() {
   const [obor, setObor] = useState("");
   const [maWeb, setMaWeb] = useState<"ano" | "ne" | "">("");
   const [webUrl, setWebUrl] = useState("");
+  const [dialCode, setDialCode] = useState("+420");
 
   function goTo(next: number, dir: number) {
     setDirection(dir);
@@ -34,6 +40,9 @@ export default function ContactForm() {
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    if (locale === "en" && data.telefon) {
+      data.telefon = `${dialCode} ${data.telefon}`;
+    }
     const zprava = [
       data.zprava,
       obor && `Obor podnikání: ${obor}.`,
@@ -258,10 +267,30 @@ export default function ContactForm() {
                     </div>
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
                       <label className="text-sm font-medium text-ink">{f.fieldTelefon}</label>
-                      <input
-                        name="telefon"
-                        className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
-                      />
+                      <div className="flex gap-2">
+                        {locale === "en" && (
+                          <select
+                            value={dialCode}
+                            onChange={(e) => setDialCode(e.target.value)}
+                            aria-label="Dial code"
+                            className="rounded-xl border border-line bg-black/20 px-3 py-2.5 text-sm text-ink outline-none focus:border-blue"
+                          >
+                            {DIAL_CODES.map((code) => (
+                              <option key={code} value={code} className="bg-bg">
+                                {code}
+                              </option>
+                            ))}
+                          </select>
+                        )}
+                        <input
+                          type="tel"
+                          name="telefon"
+                          required
+                          pattern="[0-9 ]{6,14}"
+                          placeholder={f.fieldTelefonPlaceholder}
+                          className="flex-1 rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
+                        />
+                      </div>
                     </div>
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
                       <label className="text-sm font-medium text-ink">{f.fieldZprava}</label>
