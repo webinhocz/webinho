@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Geist } from "next/font/google";
 import "./globals.css";
 import AmbientBackground from "@/components/AmbientBackground";
@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.webinho.cz"),
   title: "Webinho | Digitální vizitka vašeho byznysu",
   description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Webinho | Digitální vizitka vašeho byznysu",
     description,
@@ -44,6 +47,10 @@ export const metadata: Metadata = {
       "seznam-wmt": "LREqvLkNUSxccyYyb6ghAk3jL4Hnmnpt",
     },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#06070b",
 };
 
 export default function RootLayout({
