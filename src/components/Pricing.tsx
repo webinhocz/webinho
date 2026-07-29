@@ -1,6 +1,6 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { useLocale, Rich } from "@/lib/i18n";
 
 export default function Pricing() {
@@ -26,7 +26,9 @@ export default function Pricing() {
               className={`relative rounded-[1.75rem] p-8 transition-transform ${
                 tier.highlight
                   ? "glass-strong glow-violet border-violet/40 lg:-translate-y-4"
-                  : "glass hover:-translate-y-1"
+                  : tier.individual
+                    ? "glass-strong border-blue/30 hover:-translate-y-1"
+                    : "glass hover:-translate-y-1"
               }`}
             >
               {tier.highlight && (
@@ -34,23 +36,39 @@ export default function Pricing() {
                   {t.pricing.recommended}
                 </span>
               )}
+              {tier.individual && (
+                <span className="glow-blue mb-4 inline-flex items-center gap-1.5 rounded-md bg-blue-soft px-3 py-1 text-[11px] font-bold tracking-wide text-blue">
+                  <Sparkles className="h-3 w-3" strokeWidth={2.5} />
+                  {t.pricing.individualBadge}
+                </span>
+              )}
               <h3 className="font-heading text-lg font-bold text-ink">{tier.name}</h3>
               <p className="mt-1 text-sm text-ink-soft">{tier.desc}</p>
               <div className="mt-5 flex items-baseline gap-1.5">
-                <span
-                  className={`font-heading text-2xl font-extrabold sm:text-3xl ${
-                    tier.highlight ? "text-glow text-gradient-ink" : "text-ink"
-                  }`}
-                >
-                  {tier.priceFrom}–{tier.priceTo}
-                </span>
-                <span className="text-sm text-ink-soft">{tier.currency}</span>
+                {tier.individual ? (
+                  <span className="font-heading text-xl font-extrabold text-ink sm:text-2xl">
+                    {tier.priceLabel}
+                  </span>
+                ) : (
+                  <>
+                    <span
+                      className={`font-heading text-2xl font-extrabold sm:text-3xl ${
+                        tier.highlight ? "text-glow text-gradient-ink" : "text-ink"
+                      }`}
+                    >
+                      {tier.priceFrom}–{tier.priceTo}
+                    </span>
+                    <span className="text-sm text-ink-soft">{tier.currency}</span>
+                  </>
+                )}
               </div>
               <ul className="mt-6 space-y-2.5">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-ink-soft">
                     <Check
-                      className={`mt-0.5 h-4 w-4 shrink-0 ${tier.highlight ? "text-violet" : "text-blue"}`}
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${
+                        tier.highlight ? "text-violet" : "text-blue"
+                      }`}
                       strokeWidth={2.5}
                     />
                     {f}
