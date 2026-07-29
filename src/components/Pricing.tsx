@@ -45,22 +45,15 @@ export default function Pricing() {
               <h3 className="font-heading text-lg font-bold text-ink">{tier.name}</h3>
               <p className="mt-1 text-sm text-ink-soft">{tier.desc}</p>
               <div className="mt-5 flex items-baseline gap-1.5">
-                {tier.individual ? (
-                  <span className="font-heading text-xl font-extrabold text-ink sm:text-2xl">
-                    {tier.priceLabel}
-                  </span>
-                ) : (
-                  <>
-                    <span
-                      className={`font-heading text-2xl font-extrabold sm:text-3xl ${
-                        tier.highlight ? "text-glow text-gradient-ink" : "text-ink"
-                      }`}
-                    >
-                      {tier.priceFrom}–{tier.priceTo}
-                    </span>
-                    <span className="text-sm text-ink-soft">{tier.currency}</span>
-                  </>
-                )}
+                <span
+                  className={`font-heading text-2xl font-extrabold sm:text-3xl ${
+                    tier.highlight ? "text-glow text-gradient-ink" : "text-ink"
+                  }`}
+                >
+                  {tier.priceFrom}
+                  {tier.priceTo ? `–${tier.priceTo}` : ""}
+                </span>
+                <span className="text-sm text-ink-soft">{tier.currency}</span>
               </div>
               <ul className="mt-6 space-y-2.5">
                 {tier.features.map((f) => (

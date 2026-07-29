@@ -159,7 +159,8 @@ export const dictionary = {
         {
           name: "Premium",
           individual: true,
-          priceLabel: "Individuální nabídka",
+          priceFrom: "24 500+",
+          currency: " Kč",
           desc: "Web navržený a postavený výhradně pro vás — bez šablon, bez kompromisů. Rozsah i cena se odvíjí od vašich přesných potřeb.",
           features: [
             "Řešení šité přesně na míru",
@@ -450,7 +451,8 @@ export const dictionary = {
         {
           name: "Premium",
           individual: true,
-          priceLabel: "From 1,000 €",
+          priceFrom: "1000+",
+          currency: " €",
           desc: "A website designed and built exclusively for you — no templates, no compromises. Scope and price are shaped entirely around your exact needs.",
           features: [
             "Solution tailored exactly to you",
