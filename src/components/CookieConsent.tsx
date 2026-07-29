@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { Cookie } from "lucide-react";
+import { useLocale } from "@/lib/i18n";
 
 const STORAGE_KEY = "webinho_cookie_consent";
 
 export type CookieConsentValue = "all" | "essential";
 
 export default function CookieConsent() {
+  const { t } = useLocale();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -40,9 +42,9 @@ export default function CookieConsent() {
             <Cookie className="h-4.5 w-4.5" strokeWidth={2} />
           </div>
           <p className="text-sm leading-relaxed text-ink-soft">
-            Používáme cookies pro fungování webu a měření návštěvnosti. Více v{" "}
+            {t.cookieConsent.text}{" "}
             <a href="/ochrana-osobnich-udaju" className="font-medium text-blue underline underline-offset-2">
-              ochraně osobních údajů
+              {t.cookieConsent.linkText}
             </a>
             .
           </p>
@@ -53,14 +55,14 @@ export default function CookieConsent() {
             onClick={() => choose("essential")}
             className="glass flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold text-ink-soft transition-colors hover:text-ink sm:flex-none"
           >
-            Pouze nezbytné
+            {t.cookieConsent.essential}
           </button>
           <button
             type="button"
             onClick={() => choose("all")}
             className="gradient-ink flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] sm:flex-none"
           >
-            Přijmout vše
+            {t.cookieConsent.acceptAll}
           </button>
         </div>
       </div>

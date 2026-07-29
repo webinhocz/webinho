@@ -3,17 +3,17 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Check, Globe, RefreshCw } from "lucide-react";
+import { useLocale, Rich } from "@/lib/i18n";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const PROJECT_TYPES = [
-  { id: "Nový web", label: "Nový web", icon: Globe },
-  { id: "Redesign", label: "Redesign", icon: RefreshCw },
-];
-
-const STEPS = ["Typ projektu", "O byznysu", "Kontakt"];
+const PROJECT_ICONS: Record<string, typeof Globe> = {
+  "Nový web": Globe,
+  Redesign: RefreshCw,
+};
 
 export default function ContactForm() {
+  const { t } = useLocale();
   const [status, setStatus] = useState<Status>("idle");
   const [step, setStep] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -64,23 +64,23 @@ export default function ContactForm() {
     exit: (dir: number) => ({ opacity: 0, rotateY: dir > 0 ? -35 : 35, x: dir > 0 ? -40 : 40 }),
   };
 
+  const f = t.contactForm;
+
   return (
     <section id="kontakt" className="bg-bg py-24">
       <div className="mx-auto max-w-2xl px-6 lg:px-8">
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.16em] text-gradient-ink">Kontakt</span>
+          <span className="text-xs font-bold uppercase tracking-[0.16em] text-gradient-ink">{f.eyebrow}</span>
           <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-            Nezávazná poptávka
+            {f.title}
           </h2>
           <p className="mt-3 text-sm text-ink-soft">
-            Projděte tři krátké kroky a řekněte nám svou představu o webu. Ozveme se vám zpět a na
-            základě toho připravíme <strong className="font-semibold text-ink">návrh na míru — teprve pak
-            řešíme cenu</strong>. Celé je to nezávazné.
+            <Rich text={f.subtitle} />
           </p>
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-3">
-          {STEPS.map((label, i) => (
+          {f.steps.map((label, i) => (
             <div key={label} className="flex items-center gap-3">
               <div
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold transition-colors ${
@@ -93,7 +93,7 @@ export default function ContactForm() {
               >
                 {i < step ? <Check className="h-4 w-4" strokeWidth={3} /> : i + 1}
               </div>
-              {i < STEPS.length - 1 && <div className="h-px w-8 bg-line sm:w-14" />}
+              {i < f.steps.length - 1 && <div className="h-px w-8 bg-line sm:w-14" />}
             </div>
           ))}
         </div>
@@ -104,11 +104,8 @@ export default function ContactForm() {
               <div className="glow-blue mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-soft text-blue">
                 <Check className="h-7 w-7" strokeWidth={2.5} />
               </div>
-              <h3 className="mt-5 font-heading text-xl font-bold text-ink">Díky za poptávku</h3>
-              <p className="mt-2 text-sm text-ink-soft">
-                Ozveme se vám co nejdřív a domluvíme si detaily. Na základě toho připravíme
-                nezávazný návrh na míru.
-              </p>
+              <h3 className="mt-5 font-heading text-xl font-bold text-ink">{f.successTitle}</h3>
+              <p className="mt-2 text-sm text-ink-soft">{f.successText}</p>
             </div>
           ) : (
             <AnimatePresence mode="wait" custom={direction}>
@@ -124,26 +121,29 @@ export default function ContactForm() {
                   className="glass rounded-[1.75rem] p-8"
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <h3 className="font-heading text-lg font-bold text-ink">Co potřebujete?</h3>
+                  <h3 className="font-heading text-lg font-bold text-ink">{f.step0Title}</h3>
                   <div className="mt-6 grid grid-cols-2 gap-3">
-                    {PROJECT_TYPES.map((t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => {
-                          setTypProjektu(t.id);
-                          goTo(1, 1);
-                        }}
-                        className={`flex flex-col items-center gap-2 rounded-2xl border p-5 text-sm font-semibold transition-colors ${
-                          typProjektu === t.id
-                            ? "border-blue bg-blue-soft text-blue"
-                            : "border-line bg-bg/40 text-ink-soft hover:text-ink"
-                        }`}
-                      >
-                        <t.icon className="h-6 w-6" strokeWidth={2} />
-                        {t.label}
-                      </button>
-                    ))}
+                    {f.projectTypes.map((pt) => {
+                      const Icon = PROJECT_ICONS[pt.id];
+                      return (
+                        <button
+                          key={pt.id}
+                          type="button"
+                          onClick={() => {
+                            setTypProjektu(pt.id);
+                            goTo(1, 1);
+                          }}
+                          className={`flex flex-col items-center gap-2 rounded-2xl border p-5 text-sm font-semibold transition-colors ${
+                            typProjektu === pt.id
+                              ? "border-blue bg-blue-soft text-blue"
+                              : "border-line bg-bg/40 text-ink-soft hover:text-ink"
+                          }`}
+                        >
+                          <Icon className="h-6 w-6" strokeWidth={2} />
+                          {pt.label}
+                        </button>
+                      );
+                    })}
                   </div>
                 </motion.div>
               )}
@@ -160,34 +160,33 @@ export default function ContactForm() {
                   className="glass rounded-[1.75rem] p-8"
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <h3 className="font-heading text-lg font-bold text-ink">Pár slov o byznysu</h3>
+                  <h3 className="font-heading text-lg font-bold text-ink">{f.step1Title}</h3>
                   <div className="mt-6 flex flex-col gap-5">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-sm font-medium text-ink">Obor podnikání</label>
+                      <label className="text-sm font-medium text-ink">{f.fieldObor}</label>
                       <input
                         value={obor}
                         onChange={(e) => setObor(e.target.value)}
-                        placeholder="Kavárna, finanční poradce, e-shop..."
+                        placeholder={f.fieldOborPlaceholder}
                         className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
                       />
                     </div>
                     {typProjektu === "Redesign" ? (
                       <div className="flex flex-col gap-1.5">
                         <label className="text-sm font-medium text-ink">
-                          Odkaz na váš současný web{" "}
-                          <span className="font-normal text-ink-soft">(volitelné)</span>
+                          {f.fieldWebUrl} <span className="font-normal text-ink-soft">{f.optional}</span>
                         </label>
                         <input
                           type="url"
                           value={webUrl}
                           onChange={(e) => setWebUrl(e.target.value)}
-                          placeholder="https://vasfirma.cz"
+                          placeholder={f.fieldWebUrlPlaceholder}
                           className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
                         />
                       </div>
                     ) : (
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-sm font-medium text-ink">Máte už nějaký web?</label>
+                        <label className="text-sm font-medium text-ink">{f.fieldMaWeb}</label>
                         <div className="flex gap-3">
                           {(["ano", "ne"] as const).map((v) => (
                             <button
@@ -200,7 +199,7 @@ export default function ContactForm() {
                                   : "border-line bg-bg/40 text-ink-soft hover:text-ink"
                               }`}
                             >
-                              {v === "ano" ? "Ano" : "Ne"}
+                              {v === "ano" ? f.yes : f.no}
                             </button>
                           ))}
                         </div>
@@ -213,14 +212,14 @@ export default function ContactForm() {
                       onClick={() => goTo(0, -1)}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-ink"
                     >
-                      <ArrowLeft className="h-4 w-4" /> Zpět
+                      <ArrowLeft className="h-4 w-4" /> {f.back}
                     </button>
                     <button
                       type="button"
                       onClick={() => goTo(2, 1)}
                       className="gradient-ink rounded-xl px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
                     >
-                      Pokračovat →
+                      {f.continueLabel}
                     </button>
                   </div>
                 </motion.div>
@@ -238,10 +237,10 @@ export default function ContactForm() {
                   className="glass rounded-[1.75rem] p-8"
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <h3 className="font-heading text-lg font-bold text-ink">Kontaktní údaje</h3>
+                  <h3 className="font-heading text-lg font-bold text-ink">{f.step2Title}</h3>
                   <div className="mt-6 grid gap-5 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-sm font-medium text-ink">Jméno *</label>
+                      <label className="text-sm font-medium text-ink">{f.fieldJmeno}</label>
                       <input
                         name="jmeno"
                         required
@@ -249,7 +248,7 @@ export default function ContactForm() {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-sm font-medium text-ink">E-mail *</label>
+                      <label className="text-sm font-medium text-ink">{f.fieldEmail}</label>
                       <input
                         type="email"
                         name="email"
@@ -258,18 +257,18 @@ export default function ContactForm() {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label className="text-sm font-medium text-ink">Telefon</label>
+                      <label className="text-sm font-medium text-ink">{f.fieldTelefon}</label>
                       <input
                         name="telefon"
                         className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label className="text-sm font-medium text-ink">Zpráva</label>
+                      <label className="text-sm font-medium text-ink">{f.fieldZprava}</label>
                       <textarea
                         name="zprava"
                         rows={3}
-                        placeholder="Cokoliv, co bychom měli vědět navíc."
+                        placeholder={f.fieldZpravaPlaceholder}
                         className="rounded-xl border border-line bg-black/20 px-4 py-2.5 text-sm text-ink outline-none focus:border-blue"
                       />
                     </div>
@@ -281,21 +280,19 @@ export default function ContactForm() {
                       onClick={() => goTo(1, -1)}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-ink-soft hover:text-ink"
                     >
-                      <ArrowLeft className="h-4 w-4" /> Zpět
+                      <ArrowLeft className="h-4 w-4" /> {f.back}
                     </button>
                     <button
                       type="submit"
                       disabled={status === "loading"}
                       className="gradient-ink rounded-xl px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-60"
                     >
-                      {status === "loading" ? "Odesílám…" : "Odeslat poptávku"}
+                      {status === "loading" ? f.sending : f.submit}
                     </button>
                   </div>
 
                   {status === "error" && (
-                    <p className="mt-4 text-sm font-medium text-red-400">
-                      Něco se pokazilo. Zkuste to prosím znovu, nebo napište přímo na e-mail.
-                    </p>
+                    <p className="mt-4 text-sm font-medium text-red-400">{f.errorText}</p>
                   )}
                 </motion.div>
               )}

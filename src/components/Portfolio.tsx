@@ -1,19 +1,24 @@
 "use client";
 
 import { CLIENTS } from "@/lib/clients";
+import { useLocale } from "@/lib/i18n";
 
 const ROTATIONS = [-7, 4, -3, 6, -5, 3, -2, 5];
 
 export default function Portfolio() {
+  const { t, locale } = useLocale();
+
   return (
     <section id="portfolio" className="overflow-hidden bg-bg py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="text-xs font-bold uppercase tracking-[0.16em] text-gradient-ink">Portfolio</span>
+          <span className="text-xs font-bold uppercase tracking-[0.16em] text-gradient-ink">
+            {t.portfolio.eyebrow}
+          </span>
           <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-            Weby, které jsme vytvořili
+            {t.portfolio.title}
           </h2>
-          <p className="mt-3 text-sm text-ink-soft">Klikněte na kartu a otevřete si živý web.</p>
+          <p className="mt-3 text-sm text-ink-soft">{t.portfolio.subtitle}</p>
         </div>
       </div>
 
@@ -61,7 +66,7 @@ export default function Portfolio() {
                 )}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-4 pt-10">
                   <span className="text-[10px] font-semibold uppercase tracking-wide text-white/70">
-                    {c.category}
+                    {locale === "en" ? c.categoryEn : c.category}
                   </span>
                   <h3 className="font-heading text-sm font-bold text-white">{c.name}</h3>
                 </div>

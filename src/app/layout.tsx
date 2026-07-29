@@ -5,6 +5,7 @@ import AmbientBackground from "@/components/AmbientBackground";
 import ScrollSpine from "@/components/ScrollSpine";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { LocaleProvider } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -64,11 +65,13 @@ export default function RootLayout({
       className={cn("dark h-full", inter.variable, sora.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-full flex flex-col bg-bg text-ink antialiased">
-        <GoogleAnalytics />
-        <AmbientBackground />
-        <ScrollSpine />
-        {children}
-        <CookieConsent />
+        <LocaleProvider>
+          <GoogleAnalytics />
+          <AmbientBackground />
+          <ScrollSpine />
+          {children}
+          <CookieConsent />
+        </LocaleProvider>
       </body>
     </html>
   );

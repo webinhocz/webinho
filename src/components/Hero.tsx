@@ -1,34 +1,39 @@
+"use client";
+
 import { Check } from "lucide-react";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { useLocale } from "@/lib/i18n";
 
 export default function Hero() {
+  const { t } = useLocale();
+
   return (
     <HeroGeometric
-      badge="Pro podnikatele a majitele byznysu"
-      title1="Digitální vizitka vašeho byznysu,"
-      title2="která mluví za vás."
-      subtitle="Najdou vás, ať hledají váš obor, nebo přímo vás. A web vám navíc sám přivádí nové poptávky."
+      badge={t.hero.badge}
+      title1={t.hero.title1}
+      title2={t.hero.title2}
+      subtitle={t.hero.subtitle}
     >
       <div className="flex flex-wrap items-center justify-center gap-4">
         <a
           href="#kontakt"
           className="gradient-ink rounded-xl px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(91,110,245,0.6)] transition-transform hover:scale-[1.03]"
         >
-          Chci náhled webu →
+          {t.hero.ctaPrimary}
         </a>
         <a
           href="#portfolio"
           className="text-sm font-semibold text-ink-soft underline decoration-line underline-offset-4 transition-colors hover:text-ink"
         >
-          Ukázky prací ↓
+          {t.hero.ctaSecondary}
         </a>
       </div>
 
       <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-ink-soft">
-        {["Sběr poptávek", "Moderní design", "SEO na Googlu i Seznamu", "Tracking"].map((t) => (
-          <span key={t} className="inline-flex items-center gap-1.5">
+        {t.hero.checks.map((c) => (
+          <span key={c} className="inline-flex items-center gap-1.5">
             <Check className="h-4 w-4 text-blue" strokeWidth={2.5} />
-            {t}
+            {c}
           </span>
         ))}
       </div>

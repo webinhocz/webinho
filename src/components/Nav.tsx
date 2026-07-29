@@ -3,15 +3,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-
-const LINKS = [
-  { href: "#o-nas", label: "Proč my" },
-  { href: "#tym", label: "Tým" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#cenik", label: "Ceník" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocale } from "@/lib/i18n";
 
 export default function Nav() {
+  const { t } = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -43,7 +39,7 @@ export default function Nav() {
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
-          {LINKS.map((l) => (
+          {t.nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -54,27 +50,30 @@ export default function Nav() {
           ))}
         </div>
 
-        <a
-          href="#kontakt"
-          className="gradient-ink hidden shrink-0 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(58,77,232,0.5)] transition-transform hover:scale-[1.03] sm:inline-flex"
-        >
-          Nezávazná poptávka
-        </a>
+        <div className="flex shrink-0 items-center gap-3">
+          <LanguageSwitcher className="hidden sm:flex" />
+          <a
+            href="#kontakt"
+            className="gradient-ink hidden shrink-0 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(58,77,232,0.5)] transition-transform hover:scale-[1.03] sm:inline-flex"
+          >
+            {t.nav.cta}
+          </a>
 
-        <button
-          type="button"
-          aria-label={open ? "Zavřít menu" : "Otevřít menu"}
-          onClick={() => setOpen((v) => !v)}
-          className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-ink sm:hidden"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <button
+            type="button"
+            aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
+            onClick={() => setOpen((v) => !v)}
+            className="glass flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-ink sm:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
       {open && (
         <div className="glass border-t border-line px-6 py-6 sm:hidden">
           <div className="flex flex-col gap-5">
-            {LINKS.map((l) => (
+            {t.nav.links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
@@ -84,12 +83,13 @@ export default function Nav() {
                 {l.label}
               </a>
             ))}
+            <LanguageSwitcher />
             <a
               href="#kontakt"
               onClick={() => setOpen(false)}
               className="gradient-ink mt-2 rounded-xl px-5 py-3 text-center text-sm font-semibold text-white"
             >
-              Nezávazná poptávka
+              {t.nav.cta}
             </a>
           </div>
         </div>
