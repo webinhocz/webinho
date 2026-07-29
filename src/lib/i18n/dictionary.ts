@@ -292,6 +292,65 @@ export const dictionary = {
       essential: "Pouze nezbytné",
       acceptAll: "Přijmout vše",
     },
+    legal: {
+      terms: {
+        title: "Obchodní podmínky",
+        subtitle: "Platné pro služby poskytované prostřednictvím webu webinho.cz.",
+        badge: "Koncept — čeká na doplnění platebních a reklamačních podmínek",
+        sections: [
+          {
+            heading: "1. Provozovatel",
+            body: "**Lukáš Přibyla**, IČO: 23565667, se sídlem Hrnčířská 124/9, Opava, fyzická osoba podnikající dle živnostenského zákona (nezapsaná v obchodním rejstříku), kontaktní e-mail: info@webinho.cz (dále jen „poskytovatel“).",
+          },
+          {
+            heading: "2. Předmět služby",
+            body: "Poskytovatel na základě poptávky odeslané přes web webinho.cz zpracuje nezávazný návrh webové prezentace (design, strukturu a orientační rozsah). Realizace zakázky a její finální cena jsou vždy odsouhlaseny se zákazníkem předem, na základě zpracovaného návrhu.",
+          },
+          {
+            heading: "3. Nezávaznost poptávky a návrhu",
+            body: "Odeslání poptávkového formuláře ani zpracování úvodního návrhu nezakládá žádnou smluvní povinnost na straně zákazníka. Ke spolupráci a fakturaci dochází až po vzájemném odsouhlasení rozsahu a ceny.",
+          },
+          {
+            heading: "4. Cena a platební podmínky",
+            body: "Konečná cena se odvíjí od rozsahu odsouhlaseného návrhu a je vždy potvrzena oběma stranami před zahájením realizace. [DOPLNIT: platební podmínky, splatnost, případná záloha.]",
+          },
+          {
+            heading: "5. Reklamace a odpovědnost",
+            body: "[DOPLNIT dle konkrétních podmínek poskytovatele.]",
+          },
+          {
+            heading: "6. Závěrečná ustanovení",
+            body: "Tyto podmínky se řídí právním řádem České republiky. Poskytovatel si vyhrazuje právo tyto podmínky v přiměřeném rozsahu upravovat.",
+          },
+        ],
+      },
+      privacy: {
+        title: "Ochrana osobních údajů",
+        subtitle: "Zásady zpracování osobních údajů (GDPR) pro web webinho.cz.",
+        sections: [
+          {
+            heading: "1. Správce osobních údajů",
+            body: "Správcem osobních údajů je **Lukáš Přibyla**, IČO: 23565667, se sídlem Hrnčířská 124/9, Opava, kontaktní e-mail: info@webinho.cz (dále jen „správce“).",
+          },
+          {
+            heading: "2. Jaké údaje zpracováváme",
+            body: "Při odeslání poptávkového formuláře zpracováváme jméno, e-mail, telefon a obsah zprávy, které nám dobrovolně poskytnete. Tyto údaje slouží výhradně k tomu, abychom se vám mohli ozvat a připravit nezávazný návrh webu.",
+          },
+          {
+            heading: "3. Cookies a měření návštěvnosti",
+            body: "Web používá nezbytné technické cookies pro svůj chod. Dále používáme **Google Analytics 4** pro měření návštěvnosti — tyto cookies se **načtou až po vašem souhlasu** v cookie liště, kdykoliv jej můžete odvolat tlačítkem „Nastavení cookies“ v patičce. V budoucnu plánujeme doplnit i Meta Pixel (měření a cílení reklamních kampaní na Facebooku a Instagramu) — až jej aktivujeme, tuto stránku aktualizujeme.",
+          },
+          {
+            heading: "4. Doba uchování a práva subjektu údajů",
+            body: "Údaje z poptávkového formuláře uchováváme po dobu nezbytnou k vyřízení poptávky a případné spolupráce. **Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování a přenositelnost.** Žádosti směřujte na info@webinho.cz.",
+          },
+          {
+            heading: "5. Příjemci údajů",
+            body: "Údaje z formuláře zpracováváme prostřednictvím e-mailové služby Resend za účelem doručení poptávky. Data o návštěvnosti z Google Analytics 4 zpracovává společnost Google (po vašem souhlasu s cookies). Po nasazení Meta Pixelu doplníme informace o zpracování dat i touto službou.",
+          },
+        ],
+      },
+    },
   },
   en: {
     nav: {
@@ -583,6 +642,65 @@ export const dictionary = {
       linkText: "privacy policy",
       essential: "Essential only",
       acceptAll: "Accept all",
+    },
+    legal: {
+      terms: {
+        title: "Terms & Conditions",
+        subtitle: "Applicable to services provided through webinho.cz.",
+        badge: "Draft — payment and complaints terms still to be added",
+        sections: [
+          {
+            heading: "1. Provider",
+            body: "**Lukáš Přibyla**, Company ID (IČO): 23565667, registered address Hrnčířská 124/9, Opava, Czech Republic, a sole trader operating under the Czech Trade Licensing Act (not registered in the Commercial Register), contact email: info@webinho.cz (the \"Provider\").",
+          },
+          {
+            heading: "2. Scope of service",
+            body: "Based on an inquiry submitted through webinho.cz, the Provider prepares a non-binding proposal for a web presence (design, structure, and approximate scope). The final price and execution of the order are always agreed with the customer in advance, based on the prepared proposal.",
+          },
+          {
+            heading: "3. Non-binding inquiry and proposal",
+            body: "Submitting the inquiry form or receiving the initial proposal does not create any contractual obligation for the customer. Cooperation and invoicing only begin once both parties have agreed on scope and price.",
+          },
+          {
+            heading: "4. Price and payment terms",
+            body: "The final price depends on the scope of the agreed proposal and is always confirmed by both parties before work begins. [TO BE ADDED: payment terms, due dates, any deposit.]",
+          },
+          {
+            heading: "5. Complaints and liability",
+            body: "[TO BE ADDED, per the Provider's specific terms.]",
+          },
+          {
+            heading: "6. Final provisions",
+            body: "These terms are governed by the laws of the Czech Republic. The Provider reserves the right to amend these terms within a reasonable scope.",
+          },
+        ],
+      },
+      privacy: {
+        title: "Privacy Policy",
+        subtitle: "Personal data processing policy (GDPR) for webinho.cz.",
+        sections: [
+          {
+            heading: "1. Data controller",
+            body: "The data controller is **Lukáš Přibyla**, Company ID (IČO): 23565667, registered address Hrnčířská 124/9, Opava, Czech Republic, contact email: info@webinho.cz (the \"Controller\").",
+          },
+          {
+            heading: "2. What data we process",
+            body: "When you submit the inquiry form, we process the name, email, phone number, and message content you voluntarily provide. This data is used solely so we can get back to you and prepare a non-binding website proposal.",
+          },
+          {
+            heading: "3. Cookies and traffic measurement",
+            body: "The website uses essential technical cookies to function. We also use **Google Analytics 4** to measure traffic — these cookies **only load after your consent** in the cookie banner, which you can withdraw at any time via the \"Cookie settings\" button in the footer. We plan to add Meta Pixel in the future (measuring and targeting ad campaigns on Facebook and Instagram) — we'll update this page once it's active.",
+          },
+          {
+            heading: "4. Retention period and your rights",
+            body: "We keep inquiry-form data for as long as necessary to handle the inquiry and any resulting cooperation. **You have the right to access, correct, delete, restrict the processing of, and port your data.** Send requests to info@webinho.cz.",
+          },
+          {
+            heading: "5. Recipients of data",
+            body: "We process form data through the Resend email service to deliver inquiries. Google processes traffic data from Google Analytics 4 (once you've consented to cookies). Once Meta Pixel is deployed, we'll add information about that processing too.",
+          },
+        ],
+      },
     },
   },
 };

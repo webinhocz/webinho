@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "Webinho <noreply@webinho.cz>",
-      to: ["webinho@seznam.cz"],
+      to: ["info@webinho.cz"],
       replyTo: email,
       subject: `Nová poptávka od ${jmeno}`,
       html: `
