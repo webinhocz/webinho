@@ -13,7 +13,7 @@ const PROJECT_ICONS: Record<string, typeof Globe> = {
 };
 
 export default function ContactForm() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [status, setStatus] = useState<Status>("idle");
   const [step, setStep] = useState(0);
   const [direction, setDirection] = useState(1);
@@ -48,7 +48,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, typ_projektu: typProjektu, zprava }),
+        body: JSON.stringify({ ...data, typ_projektu: typProjektu, zprava, locale }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
