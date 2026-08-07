@@ -29,6 +29,8 @@ export default function ProposalWizard() {
   const [webUrl, setWebUrl] = useState("");
   const [dialCode, setDialCode] = useState("+420");
 
+  const canContinueStep1 = obor.trim().length > 0 && (typProjektu === "Redesign" || maWeb !== "");
+
   function goTo(next: number, dir: number) {
     setDirection(dir);
     setStep(next);
@@ -214,8 +216,9 @@ export default function ProposalWizard() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => goTo(2, 1)}
-                    className="gradient-ink rounded-xl px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+                    disabled={!canContinueStep1}
+                    onClick={() => canContinueStep1 && goTo(2, 1)}
+                    className="gradient-ink rounded-xl px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:scale-100"
                   >
                     {f.continueLabel}
                   </button>
