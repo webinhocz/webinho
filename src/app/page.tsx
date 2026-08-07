@@ -11,7 +11,7 @@ import Process from "@/components/Process";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
-import ContactForm from "@/components/ContactForm";
+import ProposalCta from "@/components/ProposalCta";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 
@@ -55,7 +55,7 @@ export default function Home() {
           <FAQ />
         </Reveal>
         <Reveal>
-          <ContactForm />
+          <ProposalCta />
         </Reveal>
       </main>
       <Footer />

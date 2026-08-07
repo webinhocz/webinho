@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -8,6 +10,8 @@ import { useLocale } from "@/lib/i18n";
 
 export default function Nav() {
   const { t } = useLocale();
+  const pathname = usePathname();
+  const sectionHref = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -34,15 +38,15 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#" onClick={() => setOpen(false)}>
+        <Link href="/" onClick={() => setOpen(false)}>
           <Logo className="h-7 sm:h-8" />
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 md:flex">
           {t.nav.links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={sectionHref(l.href)}
               className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
             >
               {l.label}
@@ -53,7 +57,7 @@ export default function Nav() {
         <div className="flex shrink-0 items-center gap-3">
           <LanguageSwitcher className="hidden sm:flex" />
           <a
-            href="#kontakt"
+            href="/navrh-webu"
             className="gradient-ink hidden shrink-0 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_-6px_rgba(58,77,232,0.5)] transition-transform hover:scale-[1.03] sm:inline-flex"
           >
             {t.nav.cta}
@@ -76,7 +80,7 @@ export default function Nav() {
             {t.nav.links.map((l) => (
               <a
                 key={l.href}
-                href={l.href}
+                href={sectionHref(l.href)}
                 onClick={() => setOpen(false)}
                 className="text-base font-medium text-ink-soft transition-colors hover:text-ink"
               >
@@ -85,7 +89,7 @@ export default function Nav() {
             ))}
             <LanguageSwitcher />
             <a
-              href="#kontakt"
+              href="/navrh-webu"
               onClick={() => setOpen(false)}
               className="gradient-ink mt-2 rounded-xl px-5 py-3 text-center text-sm font-semibold text-white"
             >

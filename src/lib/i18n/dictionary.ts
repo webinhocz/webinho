@@ -286,6 +286,23 @@ export const dictionary = {
       submit: "Odeslat poptávku",
       errorText: "Něco se pokazilo. Zkuste to prosím znovu, nebo napište přímo na e-mail.",
     },
+    proposalCta: {
+      eyebrow: "Nezávazná poptávka",
+      title: "Chcete vidět, jak by mohl vypadat váš nový web?",
+      subtitle:
+        "Projděte tři krátké kroky a řekněte nám svou představu. Připravíme **nezávazný návrh na míru — cenu řešíme až potom**.",
+      cta: "Chci návrh webu →",
+    },
+    proposalPage: {
+      back: "← Zpět na webinho.cz",
+      badge: "Nezávazně a zdarma",
+      title1: "Návrh webu",
+      title2: "pro vaše podnikání.",
+      subtitle:
+        "Vyplnění zabere pár minut — projděte tři krátké kroky a řekněte nám svou představu. Ozveme se s nezávazným návrhem na míru, cenu řešíme až potom.",
+      checks: ["Zdarma a nezávazně", "Odpověď do 24–48 hodin", "Návrh na míru vašemu byznysu"],
+      portfolioLink: "Chci se nejdřív podívat na vaše práce ↓",
+    },
     footer: {
       tagline: "Digitální vizitka vašeho byznysu, která mluví za vás.",
       contact: "Napište nám →",
@@ -644,6 +661,23 @@ export const dictionary = {
       sending: "Sending…",
       submit: "Send inquiry",
       errorText: "Something went wrong. Please try again, or email us directly.",
+    },
+    proposalCta: {
+      eyebrow: "No-obligation inquiry",
+      title: "Want to see what your new website could look like?",
+      subtitle:
+        "Go through three quick steps and tell us your vision. We'll prepare **a no-obligation custom proposal — price comes only after that**.",
+      cta: "Get my website proposal →",
+    },
+    proposalPage: {
+      back: "← Back to webinho.cz",
+      badge: "Free and non-binding",
+      title1: "A website proposal",
+      title2: "for your business.",
+      subtitle:
+        "It only takes a few minutes — go through three quick steps and tell us your vision. We'll get back to you with a no-obligation custom proposal, price comes only after that.",
+      checks: ["Free and non-binding", "Reply within 24–48 hours", "Proposal tailored to your business"],
+      portfolioLink: "I'd like to see your work first ↓",
     },
     footer: {
       tagline: "The digital business card for your company, that speaks for you.",

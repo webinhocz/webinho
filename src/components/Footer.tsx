@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center lg:px-8">
         <Logo className="h-9" />
         <p className="max-w-md text-sm text-ink-soft">{t.footer.tagline}</p>
-        <a href="#kontakt" className="text-sm font-medium text-blue">
+        <a href="/navrh-webu" className="text-sm font-medium text-blue">
           {t.footer.contact}
         </a>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-ink-soft">

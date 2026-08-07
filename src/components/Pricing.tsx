@@ -69,7 +69,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href="#kontakt"
+                href="/navrh-webu"
                 className={`mt-8 block rounded-xl px-5 py-3 text-center text-sm font-semibold transition-transform hover:scale-[1.02] ${
                   tier.highlight ? "gradient-ink text-white" : "bg-blue-soft text-blue"
                 }`}

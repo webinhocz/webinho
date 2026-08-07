@@ -16,7 +16,7 @@ export default function Hero() {
     >
       <div className="flex flex-wrap items-center justify-center gap-4">
         <a
-          href="#kontakt"
+          href="/navrh-webu"
           className="gradient-ink rounded-xl px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(91,110,245,0.6)] transition-transform hover:scale-[1.03]"
         >
           {t.hero.ctaPrimary}
