@@ -20,8 +20,13 @@ export default function OurStory() {
               <Rich text={t.ourStory.text} />
             </p>
           </div>
-          <div className="glass flex aspect-[4/3] items-center justify-center rounded-[1.75rem] text-sm font-medium text-ink-soft">
-            {t.ourStory.photoSoon}
+          <div className="glass aspect-[4/3] overflow-hidden rounded-[1.75rem]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/team/nas-pribeh.jpg"
+              alt={t.ourStory.title}
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
       </div>

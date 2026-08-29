@@ -77,8 +77,8 @@ export const dictionary = {
       title: "Tým webinho",
       photoSoon: "foto brzy",
       members: [
-        { name: "Lukáš Přibyla", role: "CEO" },
-        { name: "Petr Boček", role: "Specialista na tvorbu webu" },
+        { name: "Lukáš Přibyla", role: "CEO", photo: "/team/lukas-pribyla.jpg" as string | undefined },
+        { name: "Petr Boček", role: "Specialista na tvorbu webu", photo: undefined as string | undefined },
       ],
     },
     portfolio: {
@@ -453,8 +453,8 @@ export const dictionary = {
       title: "The webinho team",
       photoSoon: "photo coming soon",
       members: [
-        { name: "Lukáš Přibyla", role: "CEO" },
-        { name: "Petr Boček", role: "Web development specialist" },
+        { name: "Lukáš Přibyla", role: "CEO", photo: "/team/lukas-pribyla.jpg" as string | undefined },
+        { name: "Petr Boček", role: "Web development specialist", photo: undefined as string | undefined },
       ],
     },
     portfolio: {

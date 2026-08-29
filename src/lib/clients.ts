@@ -24,18 +24,15 @@ export const CLIENTS: ClientProject[] = [
     photo: "/portfolio/detektor-pasti.jpg",
   },
   {
-    name: "Pustelník Coach",
-    category: "Fitness & trénink",
-    categoryEn: "Fitness & coaching",
-    description:
-      "Prodejní stránka osobního trenéra s omezenou nabídkou a odpočtem volných míst.",
-    descriptionEn:
-      "A sales page for a personal trainer with a limited offer and a spots-remaining countdown.",
-    url: "https://pustelnikcoach.cz",
-    accent: "#3f9f7d",
-    bg: "#0d1210",
-    logo: "/loga/logo-petr.png",
-    photo: "/portfolio/pustelnik-coach.jpg",
+    name: "OA a SOŠL Opava",
+    category: "Střední škola",
+    categoryEn: "Secondary school",
+    description: "Náborový web střední školy s prezentací oborů a online přihláškou ke studiu.",
+    descriptionEn: "A recruitment website for a secondary school showcasing its programs with an online application.",
+    url: "https://naobchodku.cz",
+    accent: "#e0293f",
+    bg: "#0a0a0a",
+    photo: "/portfolio/naobchodku.jpg",
   },
   {
     name: "Élysée Garden",
@@ -106,6 +103,20 @@ export const CLIENTS: ClientProject[] = [
     accent: "#c9a15a",
     bg: "#12172a",
     photo: "/portfolio/fse.jpg",
+  },
+  {
+    name: "Pustelník Coach",
+    category: "Fitness & trénink",
+    categoryEn: "Fitness & coaching",
+    description:
+      "Prodejní stránka osobního trenéra s omezenou nabídkou a odpočtem volných míst.",
+    descriptionEn:
+      "A sales page for a personal trainer with a limited offer and a spots-remaining countdown.",
+    url: "https://pustelnikcoach.cz",
+    accent: "#3f9f7d",
+    bg: "#0d1210",
+    logo: "/loga/logo-petr.png",
+    photo: "/portfolio/pustelnik-coach.jpg",
   },
   {
     name: "Daruj Head Spa",

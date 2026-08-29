@@ -61,6 +61,7 @@ export function ImageComparison({
     <div
       ref={containerRef}
       className={`relative aspect-[4/3] w-full max-w-4xl select-none overflow-hidden rounded-[1.5rem] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.7)] sm:aspect-video ${className}`}
+      style={{ touchAction: "none" }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setIsDragging(false)}
       onTouchMove={handleTouchMove}

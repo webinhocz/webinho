@@ -20,9 +20,18 @@ export default function Team() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:max-w-xl">
           {t.team.members.map((person) => (
             <div key={person.name} className="glass overflow-hidden rounded-[1.75rem]">
-              <div className="flex aspect-[4/5] items-center justify-center border-b border-line bg-blue-soft/40 text-sm font-medium text-ink-soft">
-                {t.team.photoSoon}
-              </div>
+              {person.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={person.photo}
+                  alt={person.name}
+                  className="aspect-[4/5] w-full border-b border-line object-cover object-top"
+                />
+              ) : (
+                <div className="flex aspect-[4/5] items-center justify-center border-b border-line bg-blue-soft/40 text-sm font-medium text-ink-soft">
+                  {t.team.photoSoon}
+                </div>
+              )}
               <div className="p-6 text-center">
                 <h3 className="font-heading text-lg font-bold text-ink">{person.name}</h3>
                 <span className="text-sm font-semibold text-blue">{person.role}</span>
