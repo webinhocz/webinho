@@ -21,17 +21,17 @@ const sora = Sora({
 });
 
 const description =
-  "Digitální vizitka vašeho byznysu. Najdou vás, ať hledají váš obor, nebo přímo vás. Nezávazná konzultace zdarma.";
+  "Kompletní firemní web na míru za 29 990 Kč. Sbírá poptávky, buduje důvěru a prodává i mimo otevírací dobu. Hotovo do 7 dní, RUSH realizace do 24 hodin.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.webinho.cz"),
-  title: "Webinho | Digitální vizitka vašeho byznysu",
+  title: "Webinho | Kompletní firemní web na míru",
   description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Webinho | Digitální vizitka vašeho byznysu",
+    title: "Webinho | Kompletní firemní web na míru",
     description,
     url: "https://www.webinho.cz",
     siteName: "Webinho",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webinho | Digitální vizitka vašeho byznysu",
+    title: "Webinho | Kompletní firemní web na míru",
     description,
   },
   verification: {

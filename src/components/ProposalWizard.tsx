@@ -28,6 +28,7 @@ export default function ProposalWizard() {
   const [maWeb, setMaWeb] = useState<"ano" | "ne" | "">("");
   const [webUrl, setWebUrl] = useState("");
   const [dialCode, setDialCode] = useState("+420");
+  const [rush, setRush] = useState(false);
 
   const canContinueStep1 = obor.trim().length > 0 && (typProjektu === "Redesign" || maWeb !== "");
 
@@ -51,6 +52,7 @@ export default function ProposalWizard() {
       typProjektu === "Redesign"
         ? webUrl && `Současný web: ${webUrl}.`
         : maWeb && `Aktuální web: ${maWeb === "ano" ? "ano, ale chce to zlepšit." : "zatím žádný."}`,
+      rush && "Zájem o RUSH realizaci (web do 24–48 hodin).",
     ]
       .filter(Boolean)
       .join(" ");
@@ -284,6 +286,23 @@ export default function ProposalWizard() {
                       />
                     </div>
                   </div>
+                  <button
+                    type="button"
+                    onClick={() => setRush((v) => !v)}
+                    aria-pressed={rush}
+                    className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm font-semibold transition-colors sm:col-span-2 ${
+                      rush ? "border-blue bg-blue-soft text-blue" : "border-line bg-bg/40 text-ink-soft hover:text-ink"
+                    }`}
+                  >
+                    <span
+                      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors ${
+                        rush ? "gradient-ink border-transparent" : "border-line"
+                      }`}
+                    >
+                      {rush && <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />}
+                    </span>
+                    {f.fieldRush}
+                  </button>
                   <div className="flex flex-col gap-1.5 sm:col-span-2">
                     <label className="text-sm font-medium text-ink">{f.fieldZprava}</label>
                     <textarea

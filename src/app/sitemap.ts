@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: BASE_URL, lastModified: new Date(), priority: 1 },
     { url: `${BASE_URL}/navrh-webu`, lastModified: new Date(), priority: 0.9 },
+    { url: `${BASE_URL}/web-do-24-hodin`, lastModified: new Date(), priority: 0.8 },
     { url: `${BASE_URL}/obchodni-podminky`, lastModified: new Date(), priority: 0.3 },
     { url: `${BASE_URL}/ochrana-osobnich-udaju`, lastModified: new Date(), priority: 0.3 },
   ];

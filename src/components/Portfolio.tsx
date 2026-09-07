@@ -1,12 +1,31 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { CLIENTS } from "@/lib/clients";
 import { useLocale } from "@/lib/i18n";
 
 const ROTATIONS = [-7, 4, -3, 6, -5, 3, -2, 5];
+const CENTER_INDEX = Math.floor(CLIENTS.length / 2);
 
 export default function Portfolio() {
   const { t, locale } = useLocale();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const target = centerRef.current;
+    if (!container || !target) return;
+    // Only relevant where the row is actually a horizontal scroller (below the lg breakpoint,
+    // where it becomes a wrapping grid instead) — otherwise there's nothing to center.
+    if (container.scrollWidth <= container.clientWidth) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const delta = targetRect.left - containerRect.left;
+    const targetScrollLeft = container.scrollLeft + delta - (container.clientWidth - target.clientWidth) / 2;
+    container.scrollLeft = Math.max(0, targetScrollLeft);
+  }, []);
 
   return (
     <section id="portfolio" className="overflow-hidden bg-bg py-24">
@@ -22,15 +41,19 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <div className="mt-16 overflow-x-auto px-6 pb-10 [-ms-overflow-style:none] [scrollbar-width:none] lg:overflow-visible lg:px-0 [&::-webkit-scrollbar]:hidden">
+      <div
+        ref={containerRef}
+        className="mt-16 snap-x snap-proximity overflow-x-auto scroll-smooth px-6 pb-10 [-ms-overflow-style:none] [scrollbar-width:none] lg:overflow-visible lg:px-0 [&::-webkit-scrollbar]:hidden"
+      >
         <div className="mx-auto flex w-max items-center gap-0 lg:w-full lg:max-w-6xl lg:flex-wrap lg:justify-center lg:gap-y-12">
           {CLIENTS.map((c, i) => (
             <a
               key={c.name}
+              ref={i === CENTER_INDEX ? centerRef : undefined}
               href={c.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative shrink-0"
+              className="group relative shrink-0 snap-center"
               style={{
                 marginLeft: i === 0 ? 0 : "-2.75rem",
                 zIndex: i,

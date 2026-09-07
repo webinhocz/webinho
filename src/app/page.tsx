@@ -1,14 +1,16 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ValueProps from "@/components/ValueProps";
-import Integrations from "@/components/Integrations";
-import OurStory from "@/components/OurStory";
-import Team from "@/components/Team";
+import CostOfInaction from "@/components/CostOfInaction";
 import Portfolio from "@/components/Portfolio";
-import BeforeAfter from "@/components/BeforeAfter";
+import WhatYouGet from "@/components/WhatYouGet";
 import ElyseeResults from "@/components/ElyseeResults";
 import Process from "@/components/Process";
+import Delivery from "@/components/Delivery";
 import Pricing from "@/components/Pricing";
+import GuaranteeCapacity from "@/components/GuaranteeCapacity";
+import Vouchers from "@/components/Vouchers";
+import OurStory from "@/components/OurStory";
+import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import ProposalCta from "@/components/ProposalCta";
@@ -22,31 +24,37 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Reveal>
-          <Portfolio />
-        </Reveal>
-        <Reveal>
-          <BeforeAfter />
+          <CostOfInaction />
         </Reveal>
         <Reveal>
           <ElyseeResults />
         </Reveal>
         <Reveal>
-          <ValueProps />
+          <Portfolio />
         </Reveal>
         <Reveal>
-          <Integrations />
+          <WhatYouGet />
+        </Reveal>
+        <Reveal>
+          <Process />
+        </Reveal>
+        <Reveal>
+          <Delivery />
+        </Reveal>
+        <Reveal>
+          <Pricing />
+        </Reveal>
+        <Reveal>
+          <GuaranteeCapacity />
+        </Reveal>
+        <Reveal>
+          <Vouchers />
         </Reveal>
         <Reveal>
           <OurStory />
         </Reveal>
         <Reveal>
           <Team />
-        </Reveal>
-        <Reveal>
-          <Process />
-        </Reveal>
-        <Reveal>
-          <Pricing />
         </Reveal>
         <Reveal>
           <Testimonials />

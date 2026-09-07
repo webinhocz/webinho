@@ -8,7 +8,7 @@ export default function ElyseeResults() {
   const { t } = useLocale();
 
   return (
-    <section className="bg-bg py-24">
+    <section id="elysee" className="bg-bg py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-[0.16em] text-gradient-ink">

@@ -38,12 +38,20 @@ export default function ProposalCta() {
           })}
         </div>
 
-        <a
-          href="/navrh-webu"
-          className="gradient-ink mt-8 inline-flex rounded-xl px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(91,110,245,0.6)] transition-transform hover:scale-[1.03]"
-        >
-          {c.cta}
-        </a>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+          <a
+            href="/navrh-webu"
+            className="gradient-ink inline-flex rounded-xl px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-12px_rgba(91,110,245,0.6)] transition-transform hover:scale-[1.03]"
+          >
+            {c.cta}
+          </a>
+          <a
+            href="mailto:info@webinho.cz"
+            className="text-sm font-semibold text-ink-soft underline decoration-line underline-offset-4 transition-colors hover:text-ink"
+          >
+            {c.ctaSecondary}
+          </a>
+        </div>
       </div>
     </section>
   );

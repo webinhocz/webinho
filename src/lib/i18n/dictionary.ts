@@ -9,62 +9,94 @@ export const dictionary = {
         { href: "#portfolio", label: "Portfolio" },
         { href: "#cenik", label: "Ceník" },
       ],
-      cta: "Nezávazná poptávka",
+      cta: "Chci nezávazný návrh",
       openMenu: "Otevřít menu",
       closeMenu: "Zavřít menu",
     },
     hero: {
-      badge: "Pro podnikatele a majitele byznysu",
-      title1: "Digitální vizitka vašeho byznysu,",
-      title2: "která mluví za vás.",
+      badge: "Pro firmy, které chtějí web jako obchodní nástroj",
+      title1: "Váš web nemá jen vypadat dobře.",
+      title2: "Má vám prodávat.",
       subtitle:
-        "Najdou vás, ať hledají váš obor, nebo přímo vás. A web vám navíc sám přivádí nové poptávky.",
-      ctaPrimary: "Chci náhled webu →",
+        "Kompletní firemní web na míru, který sbírá poptávky, buduje důvěru a prodává i mimo otevírací dobu. Hotovo do 7 dní.",
+      ctaPrimary: "Chci nezávazný návrh →",
       ctaSecondary: "Ukázky prací ↓",
-      checks: ["Sběr poptávek", "Moderní design", "SEO na Googlu i Seznamu", "Tracking"],
+      checks: ["Hotovo do 7 dní", "RUSH do 24 hodin", "Garance termínu", "SEO", "Tracking"],
     },
-    valueProps: {
-      eyebrow: "Proč webinho",
-      title: "Obyčejná vizitka dnes nestačí.",
-      subtitle: "Tvoříme moderní webové stránky, které vás reprezentují a přivádí nové zákazníky.",
-      items: [
+    costOfInaction: {
+      eyebrow: "Cena nečinnosti",
+      title: "Kolik vás stojí aktuální web?",
+      subtitle:
+        "Nejde o strašení. Jde o to, co se reálně děje mezi člověkem, který vás najde, a člověkem, který si u vás objedná.",
+      points: [
         {
-          title: "Web šitý na míru",
-          text: "Ne šablona, ne obyčejná vizitka. **Postavíme vám web na míru** s fotkami, službami i atmosférou vašeho podnikání.",
+          title: "Špatný první dojem",
+          text: "Dobrý web udělá dobrý dojem. Špatný web ho udělá i firmě, která je jinak skvělá.",
         },
         {
-          title: "Najdou váš web na Googlu i Seznamu",
-          text: "Když někdo hledá váš obor nebo přímo vaši firmu, potřebujete se tam objevit. **Bez webu jde zákazník ke konkurenci.**",
+          title: "Nesbírá poptávky",
+          text: "Návštěvník odejde dřív, než najde formulář — nebo mu prostě nevěří.",
         },
         {
-          title: "Web, který pracuje za vás",
-          text: "Nejen reprezentuje. Díky poptávkovému formuláři vám přivádí **nové klienty 24 hodin denně**.",
+          title: "Nejasná nabídka",
+          text: "Nikdo pořádně neví, co přesně prodáváte a proč zrovna vy.",
+        },
+      ],
+      caseEyebrow: "Případová studie — Obora Víno",
+      caseText:
+        "Pan Malucha měl přesně tenhle web — zastaralý, bez jediné poptávky. Dnes má web, který dělá skvělý první dojem a už sesbíral svoji první poptávku.",
+      before: "Před",
+      after: "Po",
+      hint: "Přetáhněte posuvník a porovnejte.",
+      altBefore: "Původní web Obora Janovská Dolina",
+      altAfter: "Nový web Obora Víno od webinho",
+    },
+    whatYouGet: {
+      eyebrow: "Co dostanete",
+      title: "Web, který za vás pracuje nonstop.",
+      subtitle:
+        "Nejde jen o hezký design. Stavíme web tak, aby sbíral poptávky, budoval důvěru a prodával i ve chvílích, kdy vy zrovna nemůžete.",
+      tabs: [
+        {
+          label: "Web",
+          items: [
+            {
+              title: "Web šitý na míru",
+              text: "Ne šablona, ne obyčejná vizitka. **Postavíme vám web na míru** s fotkami, službami i atmosférou vašeho podnikání.",
+            },
+            {
+              title: "Najdou váš web na Googlu i Seznamu",
+              text: "Když někdo hledá váš obor nebo přímo vaši firmu, potřebujete se tam objevit. **Bez webu jde zákazník ke konkurenci.**",
+            },
+            {
+              title: "Web, který pracuje za vás",
+              text: "Nejen reprezentuje. Díky poptávkovému formuláři vám přivádí **nové klienty 24 hodin denně**.",
+            },
+          ],
+        },
+        {
+          label: "Napojení a tracking",
+          items: [
+            {
+              title: "Google Analytics 4 & Google Tag",
+              text: "Napojíme **GA4 a Google Tag Manager**, abyste přesně věděli, odkud lidé přichází a co na webu dělají.",
+            },
+            {
+              title: "Meta Pixel",
+              text: "Nastavíme **Meta Pixel** pro sledování konverzí a cílení reklamy na Facebooku a Instagramu.",
+            },
+            {
+              title: "Platební brány",
+              text: "Napojíme **platební bránu** podle potřeby — od jednorázových plateb po e-shopové řešení.",
+            },
+            {
+              title: "Automatizované e-maily",
+              text: "Poptávky a objednávky z webu vám i klientům pošleme **automaticky** e-mailem, bez ruční práce.",
+            },
+          ],
         },
       ],
       note: "Ať web zatím nemáte, nebo je zastaralý. **Špatný první dojem odradí zákazníka i od velké firmy se silným kapitálem.** Setkali jsme se s oběma případy a víme, jak to změnit.",
-    },
-    integrations: {
-      eyebrow: "Co umíme napojit navíc",
-      title: "Nejen hezký web",
-      subtitle: "Weby stavíme tak, aby přinášely data i výsledky, ne jen dobrý dojem.",
-      items: [
-        {
-          title: "Google Analytics 4 & Google Tag",
-          text: "Napojíme **GA4 a Google Tag Manager**, abyste přesně věděli, odkud lidé přichází a co na webu dělají.",
-        },
-        {
-          title: "Meta Pixel",
-          text: "Nastavíme **Meta Pixel** pro sledování konverzí a cílení reklamy na Facebooku a Instagramu.",
-        },
-        {
-          title: "Platební brány",
-          text: "Napojíme **platební bránu** podle potřeby — od jednorázových plateb po e-shopové řešení.",
-        },
-        {
-          title: "Automatizované e-maily",
-          text: "Poptávky a objednávky z webu vám i klientům pošleme **automaticky** e-mailem, bez ruční práce.",
-        },
-      ],
     },
     ourStory: {
       eyebrow: "Náš příběh",
@@ -86,19 +118,9 @@ export const dictionary = {
       title: "Weby, které jsme vytvořili",
       subtitle: "Klikněte na kartu a otevřete si živý web.",
     },
-    beforeAfter: {
-      eyebrow: "Případová studie — Obora Víno",
-      title: "První dojem rozhoduje",
-      text: "Pan Malucha měl zastaralý web, který **nesbíral žádné poptávky**. Dnes má web, který **dělá skvělý první dojem** — a už sesbíral svoji první poptávku.",
-      before: "Před",
-      after: "Po",
-      hint: "Přetáhněte posuvník a porovnejte.",
-      altBefore: "Původní web Obora Janovská Dolina",
-      altAfter: "Nový web Obora Víno od webinho",
-    },
     elyseeResults: {
       eyebrow: "Případová studie — Élysée Garden",
-      title: "Web, který vydělává i ve spánku",
+      title: "Její první měsíc s novým webem",
       text: "Nový web pro Head Spa studio Élysée Garden nesbírá jen poptávky — přímo na něm si klientky můžou koupit i dárkové poukazy. **Tohle všechno se stalo už během prvního měsíce od spuštění** — a web jí poběží dál, dlouhodobě.",
       badge: "Prvních 30 dní od spuštění webu",
       stats: [
@@ -109,69 +131,113 @@ export const dictionary = {
       note: "Prodej poukazů běží přes web nonstop — **i ve chvílích, kdy klientku fyzicky neobsluhuje ani s ní netelefonuje**. Cash flow tak není závislý jen na tom, co se stihne v salonu.",
     },
     process: {
-      eyebrow: "Jak to probíhá",
-      title: "Od poptávky k hotovému webu",
+      eyebrow: "Kolik práce to je pro vás",
+      title: "Jen 60 minut vašeho času.",
       steps: [
         {
-          title: "Nezávazná poptávka",
-          text: "Napíšete nám pár slov o svém byznysu a jak si nový web představujete.",
+          title: "Řeknete nám o byznysu",
+          text: "Co děláte, co prodáváte, co máte rádi, na čem si zakládáte a co od webu čekáte.",
         },
         {
-          title: "Návrh na míru",
-          text: "Připravíme orientační návrh designu a struktury podle vašeho oboru — **zatím bez řešení ceny**.",
+          title: "Vyplníte onboarding formulář",
+          text: "Krátký formulář s fotkami, texty a info o byznysu — **vyplníte sami, nebo si ho projdeme spolu na callu**.",
         },
         {
-          title: "Odsouhlasení ceny",
-          text: "Podle rozsahu návrhu si spolu **odsouhlasíme finální cenu** a jdeme do toho.",
+          title: "Připravíme kompletní web",
+          text: "Strukturu, texty, design, formuláře i technické řešení — **na míru vašemu byznysu**.",
         },
         {
-          title: "Spuštění a poptávky",
-          text: "Web dokončíme a nasadíme online. **Od prvního dne vás reprezentuje a sbírá poptávky.**",
+          title: "Dáte nám feedback",
+          text: "Podíváte se na návrh a řeknete, co upravit.",
+        },
+        {
+          title: "Spustíme web",
+          text: "Od prvního dne vás reprezentuje a **sbírá poptávky**.",
         },
       ],
     },
-    pricing: {
-      eyebrow: "Ceník",
-      title: "Balíčky podle rozsahu",
-      subtitle: "Každý web je jiný, proto je i cena vždy individuální. Tady jsou orientační rozpětí.",
-      recommended: "DOPORUČENO",
-      individualBadge: "NA MÍRU",
-      cta: "Mám zájem",
+    delivery: {
+      eyebrow: "Rychlost realizace",
+      title: "Standardní realizace, nebo prioritní RUSH.",
+      subtitle:
+        "Web může být hotový a online do 7 dní, pokud dodáte podklady, feedback a přístupy k doméně/DNS včas. Když to spěchá víc, máme prioritní realizaci.",
       tiers: [
         {
-          name: "Start",
-          priceFrom: "8 500",
-          priceTo: "14 500",
-          currency: " Kč",
-          desc: "Jednoduchá digitální vizitka pro živnostníky.",
-          features: ["One-page web na míru", "Poptávkový formulář", "Základní SEO"],
-          highlight: false,
+          name: "Standard",
+          days: "do 7 dní",
+          price: "V ceně",
+          badge: null as string | null,
+          desc: "Doporučený postup pro většinu projektů — rychle, ale bez kompromisů v kvalitě.",
         },
         {
-          name: "Business",
-          priceFrom: "14 500",
-          priceTo: "24 500",
-          currency: " Kč",
-          desc: "Vícestránkový web pro malé a střední firmy.",
-          features: ["Až 5 podstránek", "Poptávkový formulář", "SEO nastavení", "Kompletně custom design"],
-          highlight: true,
+          name: "RUSH 48",
+          days: "do 48 hodin",
+          price: "+7 000 Kč",
+          badge: "Prioritní realizace",
+          desc: "Web hotový do 48 hodin od potvrzení kompletních podkladů. Jdete mimo pořadí.",
         },
         {
-          name: "Premium",
-          individual: true,
-          priceFrom: "24 500+",
-          currency: " Kč",
-          desc: "Web navržený a postavený výhradně pro vás — bez šablon, bez kompromisů. Rozsah i cena se odvíjí od vašich přesných potřeb.",
-          features: [
-            "Řešení šité přesně na míru",
-            "Osobní konzultace nad návrhem",
-            "Pokročilé SEO",
-            "Prioritní zpracování",
-          ],
-          highlight: false,
+          name: "RUSH 24",
+          days: "do 24 hodin",
+          price: "+10 000 Kč",
+          badge: "Nejvyšší priorita",
+          desc: "Web hotový do 24 hodin od potvrzení kompletních podkladů. Pro launch, který nemůže čekat.",
         },
       ],
-      note: "Ceny jsou orientační. **Přesnou nabídku vždy šijeme na míru** podle rozsahu a potřeb vašeho byznysu. Primárně tvoříme nové weby jako digitální vizitku s poptávkovým formulářem. Redesign i e-shop dokážeme zrealizovat, řešíme je individuálně podle poptávky.",
+      cta: "Chci nezávazný návrh →",
+      note: "RUSH realizace vyžaduje kompletní podklady předem — logo, texty, fotky, přístupy. Bez nich neumíme garantovat rychlost.",
+      linkText: "Potřebujete web fakt narychlo? Zjistěte víc o expresní tvorbě webu →",
+    },
+    pricing: {
+      eyebrow: "Hlavní nabídka",
+      title: "Kompletní firemní web na míru",
+      subtitle:
+        "Jedna jasná cena za web, který dělá to, co má — sbírá poptávky, buduje důvěru a prodává i ve chvílích, kdy vy zrovna nemůžete.",
+      offer: {
+        name: "Kompletní firemní web na míru",
+        price: "29 990",
+        currency: " Kč",
+        features: [
+          "Struktura webu",
+          "Custom design",
+          "Copywriting",
+          "Desktop, tablet i mobil",
+          "Poptávkové a kontaktní formuláře",
+          "CTA struktura",
+          "Základní on-page SEO",
+          "Technické nastavení",
+          "Analytika a tracking tam, kde dává smysl",
+          "Napojení domény a DNS",
+          "Spuštění webu",
+          "Potřebná napojení",
+          "Online poukazy tam, kde dávají smysl",
+          "Běžné úpravy před finálním spuštěním",
+        ],
+        paymentSplit: ["50 % před zahájením", "50 % po finálním spuštění"],
+        cta: "Chci nezávazný návrh →",
+      },
+      note: "Rozsah je vždy podle konkrétního projektu — cena 29 990 Kč platí pro kompletní firemní web. U netypicky rozsáhlého projektu (např. e-shop s desítkami produktů) rozsah i cenu potvrdíme předem, ještě než začneme.",
+    },
+    guaranteeCapacity: {
+      eyebrow: "Proč nám můžete věřit",
+      guarantee: {
+        title: "Garance termínu",
+        text: "Pokud web nespustíme v potvrzeném termínu z důvodu na naší straně — byť o jediný den — dostanete slevu **5 000 Kč**. Za každý další započatý týden zpoždění dalších **5 000 Kč**.",
+        note: "Garance se nevztahuje na zpoždění způsobené klientem — např. nedodanými podklady, feedbackem nebo přístupy.",
+      },
+      capacity: {
+        title: "Maximálně 5 projektů měsíčně",
+        text: "Nový web nedáváme na sériovou výrobu. Abychom drželi rychlost i kvalitu, bereme si každý měsíc jen **omezený počet nových projektů**.",
+      },
+    },
+    vouchers: {
+      eyebrow: "Online poukazy",
+      title: "Váš web nemá provozní dobu. Pracuje nonstop.",
+      subtitle:
+        "Pro beauty, head spa, wellness, masáže, zážitky a podobné služby umíme přímo na web napojit prodej dárkových poukazů.",
+      steps: ["Zákazník vybere poukaz", "Zaplatí online", "Dostane ho automaticky"],
+      proof: "Přesně takhle to funguje na webu Élysée Garden — **4 prodané poukazy hned první měsíc**.",
+      proofLink: "Ukázat výsledky ↑",
     },
     testimonials: {
       eyebrow: "Reference",
@@ -223,16 +289,32 @@ export const dictionary = {
         {
           question: "Je poptávka nezávazná?",
           answer:
-            "**Ano, poptávka i úvodní návrh jsou zcela nezávazné.** Cenu řešíme až po odsouhlasení návrhu.",
+            "**Ano, poptávka i úvodní návrh jsou zcela nezávazné.** Napíšete nám o svém byznysu, my připravíme návrh — a teprve pak se rozhodujete.",
         },
         {
-          question: "Jak dlouho trvá tvorba webu?",
-          answer: "Podle rozsahu obvykle **2–4 týdny** od odsouhlasení návrhu po spuštění.",
-        },
-        {
-          question: "Kolik bude web stát?",
+          question: "Co přesně dostanu za 29 990 Kč?",
           answer:
-            "Cena se odvíjí od rozsahu — **orientační rozpětí najdete v ceníku**, finální částku vždy potvrdíme předem.",
+            "**Kompletní firemní web na míru** — strukturu, custom design, copywriting, formuláře, základní SEO, technické nastavení, napojení domény i spuštění. Rozsah se odvíjí od konkrétního projektu, cena je ale jasná od začátku.",
+        },
+        {
+          question: "Jak funguje RUSH 48 a RUSH 24?",
+          answer:
+            "Když to spěchá, web dokážeme spustit **do 48 nebo 24 hodin** od potvrzení kompletních podkladů (+7 000 Kč, resp. +10 000 Kč). Je to prioritní realizace, ne sleva na kvalitě.",
+        },
+        {
+          question: "Co když web nestihnete v domluveném termínu?",
+          answer:
+            "Garantujeme ho. Pokud termín podklouzneme z naší strany, dostanete **slevu 5 000 Kč** — a dalších 5 000 Kč za každý další započatý týden zpoždění.",
+        },
+        {
+          question: "Proč berete jen 5 nových projektů měsíčně?",
+          answer:
+            "Abychom **udrželi rychlost i kvalitu**. Radši méně projektů odvedených pořádně než hodně projektů narychlo.",
+        },
+        {
+          question: "Umíte prodávat online poukazy?",
+          answer:
+            "Ano — hlavně pro beauty, head spa, wellness, masáže a zážitkové služby. Zákazník si poukaz **vybere, zaplatí online a dostane ho automaticky**.",
         },
         {
           question: "Najdou mě zákazníci na Googlu?",
@@ -280,6 +362,7 @@ export const dictionary = {
       fieldEmail: "E-mail *",
       fieldTelefon: "Telefon *",
       fieldTelefonPlaceholder: "123 456 789",
+      fieldRush: "Mám zájem o RUSH realizaci (web do 24–48 hodin)",
       fieldZprava: "Zpráva",
       fieldZpravaPlaceholder: "Cokoliv, co bychom měli vědět navíc.",
       sending: "Odesílám…",
@@ -288,10 +371,11 @@ export const dictionary = {
     },
     proposalCta: {
       eyebrow: "Nezávazná poptávka",
-      title: "Chcete vidět, jak by mohl vypadat váš nový web?",
+      title: "Chcete tenhle web i pro svůj byznys?",
       subtitle:
-        "Projděte tři krátké kroky a řekněte nám svou představu. Připravíme **nezávazný návrh na míru — cenu řešíme až potom**.",
-      cta: "Chci návrh webu →",
+        "Napíšete nám, o čem vaše podnikání je. My **připravíme kompletní web na míru — cenu 29 990 Kč znáte hned na začátku**.",
+      cta: "Chci nezávazný návrh →",
+      ctaSecondary: "Domluvit krátkou konzultaci",
     },
     proposalPage: {
       back: "← Zpět na webinho.cz",
@@ -304,8 +388,8 @@ export const dictionary = {
       portfolioLink: "Chci se nejdřív podívat na vaše práce ↓",
     },
     footer: {
-      tagline: "Digitální vizitka vašeho byznysu, která mluví za vás.",
-      contact: "Napište nám →",
+      tagline: "Kompletní firemní web, který za vás pracuje nonstop.",
+      contact: "Nezávazný návrh →",
       terms: "Obchodní podmínky",
       privacy: "Ochrana osobních údajů",
       cookieSettings: "Nastavení cookies",
@@ -321,7 +405,7 @@ export const dictionary = {
       terms: {
         title: "Obchodní podmínky",
         subtitle: "Platné pro služby poskytované prostřednictvím webu webinho.cz.",
-        badge: "Koncept — čeká na doplnění platebních a reklamačních podmínek",
+        badge: "Koncept — čeká na doplnění reklamačních podmínek",
         sections: [
           {
             heading: "1. Provozovatel",
@@ -337,7 +421,7 @@ export const dictionary = {
           },
           {
             heading: "4. Cena a platební podmínky",
-            body: "Konečná cena se odvíjí od rozsahu odsouhlaseného návrhu a je vždy potvrzena oběma stranami před zahájením realizace. [DOPLNIT: platební podmínky, splatnost, případná záloha.]",
+            body: "Cena za kompletní firemní web na míru je 29 990 Kč, konkrétní rozsah se odvíjí od projektu a je vždy potvrzen před zahájením realizace. **Platba probíhá ve dvou částech: 50 % před zahájením prací a 50 % po finálním spuštění webu.** Expresní realizace (RUSH 48 / RUSH 24) je zpoplatněna příplatkem 7 000 Kč, resp. 10 000 Kč, a vyžaduje kompletní podklady dodané předem. Při prodlení ze strany poskytovatele s potvrzeným termínem spuštění náleží zákazníkovi sleva 5 000 Kč a dalších 5 000 Kč za každý další započatý týden zpoždění; tato garance se netýká zpoždění způsobeného zákazníkem (např. nedodanými podklady, feedbackem nebo přístupy).",
           },
           {
             heading: "5. Reklamace a odpovědnost",
@@ -385,62 +469,94 @@ export const dictionary = {
         { href: "#portfolio", label: "Portfolio" },
         { href: "#cenik", label: "Pricing" },
       ],
-      cta: "Free quote",
+      cta: "Get a free proposal",
       openMenu: "Open menu",
       closeMenu: "Close menu",
     },
     hero: {
-      badge: "For entrepreneurs and business owners",
-      title1: "The digital business card for your company,",
-      title2: "that speaks for you.",
+      badge: "For businesses that want their website to sell",
+      title1: "Your website shouldn't just look good.",
+      title2: "It should sell for you.",
       subtitle:
-        "They'll find you — whether they search your industry or your business by name. And your website brings in new leads on its own.",
-      ctaPrimary: "Show me a preview →",
+        "A complete custom business website that collects leads, builds trust, and sells even outside office hours. Live in 7 days.",
+      ctaPrimary: "Get a free proposal →",
       ctaSecondary: "See our work ↓",
-      checks: ["Lead generation", "Modern design", "SEO on Google", "Tracking"],
+      checks: ["Live in 7 days", "RUSH in 24 hours", "Deadline guarantee", "SEO", "Tracking"],
     },
-    valueProps: {
-      eyebrow: "Why webinho",
-      title: "A plain business card isn't enough anymore.",
-      subtitle: "We build modern websites that represent your business and bring in new customers.",
-      items: [
+    costOfInaction: {
+      eyebrow: "The cost of doing nothing",
+      title: "How much is your current website costing you?",
+      subtitle:
+        "This isn't scare tactics. It's what actually happens between someone finding you and someone becoming your customer.",
+      points: [
         {
-          title: "A website tailored to you",
-          text: "Not a template, not a plain brochure site. **We build your website from scratch** with your photos, services, and the feel of your business.",
+          title: "A bad first impression",
+          text: "A good website makes a good impression. A bad one does too — even for a company that's otherwise great.",
         },
         {
-          title: "They'll find your website on Google",
-          text: "When someone searches for your industry or your business by name, you need to show up. **Without a website, the customer goes to your competitor.**",
+          title: "It doesn't collect inquiries",
+          text: "The visitor leaves before finding the form — or just doesn't trust it.",
         },
         {
-          title: "A website that works for you",
-          text: "It doesn't just represent you. Thanks to the contact form, it brings you **new clients 24 hours a day**.",
+          title: "An unclear offer",
+          text: "Nobody really knows what you sell, or why you.",
+        },
+      ],
+      caseEyebrow: "Case study — Obora Víno",
+      caseText:
+        "Mr. Malucha had exactly this kind of website — outdated, with zero inquiries. Today he has a website that makes a great first impression, and it's already landed its first inquiry.",
+      before: "Before",
+      after: "After",
+      hint: "Drag the slider to compare.",
+      altBefore: "Original Obora Janovská Dolina website",
+      altAfter: "New Obora Víno website by webinho",
+    },
+    whatYouGet: {
+      eyebrow: "What you get",
+      title: "A website that works for you around the clock.",
+      subtitle:
+        "It's not just about good design. We build websites that collect leads, build trust, and sell even when you can't.",
+      tabs: [
+        {
+          label: "Website",
+          items: [
+            {
+              title: "A website tailored to you",
+              text: "Not a template, not a plain brochure site. **We build your website from scratch** with your photos, services, and the feel of your business.",
+            },
+            {
+              title: "They'll find your website on Google",
+              text: "When someone searches for your industry or your business by name, you need to show up. **Without a website, the customer goes to your competitor.**",
+            },
+            {
+              title: "A website that works for you",
+              text: "It doesn't just represent you. Thanks to the contact form, it brings you **new clients 24 hours a day**.",
+            },
+          ],
+        },
+        {
+          label: "Integrations & tracking",
+          items: [
+            {
+              title: "Google Analytics 4 & Google Tag",
+              text: "We'll connect **GA4 and Google Tag Manager** so you know exactly where your visitors come from and what they do on your site.",
+            },
+            {
+              title: "Meta Pixel",
+              text: "We'll set up **Meta Pixel** for conversion tracking and ad targeting on Facebook and Instagram.",
+            },
+            {
+              title: "Payment gateways",
+              text: "We'll connect a **payment gateway** as needed — from one-off payments to a full online store.",
+            },
+            {
+              title: "Automated emails",
+              text: "Inquiries and orders from your website get sent to you and your clients **automatically** by email — no manual work needed.",
+            },
+          ],
         },
       ],
       note: "Whether you don't have a website yet, or it's outdated. **A bad first impression can turn customers away even from a large, well-funded company.** We've seen both cases, and we know how to fix it.",
-    },
-    integrations: {
-      eyebrow: "What else we can connect",
-      title: "More than just a pretty website",
-      subtitle: "We build websites to deliver data and results, not just a good impression.",
-      items: [
-        {
-          title: "Google Analytics 4 & Google Tag",
-          text: "We'll connect **GA4 and Google Tag Manager** so you know exactly where your visitors come from and what they do on your site.",
-        },
-        {
-          title: "Meta Pixel",
-          text: "We'll set up **Meta Pixel** for conversion tracking and ad targeting on Facebook and Instagram.",
-        },
-        {
-          title: "Payment gateways",
-          text: "We'll connect a **payment gateway** as needed — from one-off payments to a full online store.",
-        },
-        {
-          title: "Automated emails",
-          text: "Inquiries and orders from your website get sent to you and your clients **automatically** by email — no manual work needed.",
-        },
-      ],
     },
     ourStory: {
       eyebrow: "Our story",
@@ -462,19 +578,9 @@ export const dictionary = {
       title: "Websites we've built",
       subtitle: "Click a card to open the live website.",
     },
-    beforeAfter: {
-      eyebrow: "Case study — Obora Víno",
-      title: "First impressions decide",
-      text: "Mr. Malucha had an outdated website that **collected zero inquiries**. Today he has a website that **makes a great first impression** — and it's already landed its first inquiry.",
-      before: "Before",
-      after: "After",
-      hint: "Drag the slider to compare.",
-      altBefore: "Original Obora Janovská Dolina website",
-      altAfter: "New Obora Víno website by webinho",
-    },
     elyseeResults: {
       eyebrow: "Case study — Élysée Garden",
-      title: "A website that earns money while she sleeps",
+      title: "Her first month with the new website",
       text: "The new website for Élysée Garden Head Spa studio doesn't just collect inquiries — clients can buy gift vouchers directly on it too. **All of this happened within the first month of launch** — and the website keeps running for her long-term.",
       badge: "First 30 days since launch",
       stats: [
@@ -485,69 +591,113 @@ export const dictionary = {
       note: "Voucher sales run through the website around the clock — **even while she's not physically serving a client or on the phone**. Cash flow isn't limited to what happens in the salon.",
     },
     process: {
-      eyebrow: "How it works",
-      title: "From inquiry to finished website",
+      eyebrow: "How much work is it for you",
+      title: "Just 60 minutes of your time.",
       steps: [
         {
-          title: "No-obligation inquiry",
-          text: "Tell us a bit about your business and how you picture your new website.",
+          title: "Tell us about your business",
+          text: "What you do, what you sell, what you're proud of, and what you expect from the website.",
         },
         {
-          title: "Custom design proposal",
-          text: "We'll put together a rough design and structure proposal for your industry — **with no price discussion yet**.",
+          title: "You fill in an onboarding form",
+          text: "A short form with photos, copy, and info about your business — **fill it in yourself, or we'll go through it together on a call**.",
         },
         {
-          title: "Price agreement",
-          text: "Based on the scope of the proposal, we'll **agree on the final price** together and get started.",
+          title: "We build the complete website",
+          text: "Structure, copy, design, forms, and the technical setup — **tailored to your business**.",
         },
         {
-          title: "Launch & inquiries",
-          text: "We finish the website and launch it live. **From day one, it represents you and starts collecting inquiries.**",
+          title: "You give feedback",
+          text: "You review the proposal and tell us what to adjust.",
+        },
+        {
+          title: "We launch it",
+          text: "From day one it represents you and **starts collecting inquiries**.",
         },
       ],
     },
-    pricing: {
-      eyebrow: "Pricing",
-      title: "Packages by scope",
-      subtitle: "Every website is different, so pricing is always individual. Here are the approximate ranges.",
-      recommended: "RECOMMENDED",
-      individualBadge: "BESPOKE",
-      cta: "I'm interested",
+    delivery: {
+      eyebrow: "Turnaround speed",
+      title: "Standard delivery, or priority RUSH.",
+      subtitle:
+        "Your website can be live in 7 days if you provide materials, feedback, and domain/DNS access on time. Need it faster? We offer priority delivery.",
       tiers: [
         {
-          name: "Start",
-          priceFrom: "400",
-          priceTo: "600",
-          currency: " €",
-          desc: "A simple digital business card for freelancers and sole traders.",
-          features: ["Custom one-page website", "Contact form", "Basic SEO"],
-          highlight: false,
+          name: "Standard",
+          days: "within 7 days",
+          price: "Included",
+          badge: null as string | null,
+          desc: "The recommended path for most projects — fast, with no compromise on quality.",
         },
         {
-          name: "Business",
-          priceFrom: "600",
-          priceTo: "1000",
-          currency: " €",
-          desc: "A multi-page website for small and medium businesses.",
-          features: ["Up to 5 subpages", "Contact form", "SEO setup", "Fully custom design"],
-          highlight: true,
+          name: "RUSH 48",
+          days: "within 48 hours",
+          price: "+€280",
+          badge: "Priority delivery",
+          desc: "Your website live within 48 hours of confirming complete materials. You skip the queue.",
         },
         {
-          name: "Premium",
-          individual: true,
-          priceFrom: "1000+",
-          currency: " €",
-          desc: "A website designed and built exclusively for you — no templates, no compromises. Scope and price are shaped entirely around your exact needs.",
-          features: [
-            "Solution tailored exactly to you",
-            "Personal consultation on the proposal",
-            "Advanced SEO",
-            "Priority turnaround",
-          ],
-          highlight: false,
+          name: "RUSH 24",
+          days: "within 24 hours",
+          price: "+€400",
+          badge: "Top priority",
+          desc: "Your website live within 24 hours of confirming complete materials. For a launch that can't wait.",
         },
       ],
-      note: "Prices are approximate. **We always tailor the exact quote** to the scope and needs of your business. We primarily build new websites as a digital business card with a contact form. We can also handle redesigns and online stores — those are scoped individually.",
+      cta: "Get a free proposal →",
+      note: "RUSH delivery requires complete materials upfront — logo, copy, photos, access. Without them we can't guarantee the speed.",
+      linkText: "Need a website really fast? Learn more about express website builds →",
+    },
+    pricing: {
+      eyebrow: "Main offer",
+      title: "A complete custom business website",
+      subtitle:
+        "One clear price for a website that does its job — collects inquiries, builds trust, and sells even when you can't.",
+      offer: {
+        name: "Complete custom business website",
+        price: "1 200",
+        currency: " €",
+        features: [
+          "Website structure",
+          "Custom design",
+          "Copywriting",
+          "Desktop, tablet & mobile",
+          "Inquiry & contact forms",
+          "CTA structure",
+          "Basic on-page SEO",
+          "Technical setup",
+          "Analytics & tracking where it makes sense",
+          "Domain & DNS setup",
+          "Launch",
+          "Necessary integrations",
+          "Online vouchers where they make sense",
+          "Standard revisions before final launch",
+        ],
+        paymentSplit: ["50% before we start", "50% after final launch"],
+        cta: "Get a free proposal →",
+      },
+      note: "Scope always depends on the specific project — €1,200 covers a complete business website. For an unusually large project (e.g. an online store with dozens of products), we confirm scope and price upfront, before starting.",
+    },
+    guaranteeCapacity: {
+      eyebrow: "Why you can trust us",
+      guarantee: {
+        title: "Deadline guarantee",
+        text: "If we miss the confirmed launch date for reasons on our side — even by a single day — you get **€200 off**. Another **€200** for every additional week of delay that starts.",
+        note: "This guarantee doesn't cover delays caused by the client — e.g. missing materials, feedback, or access.",
+      },
+      capacity: {
+        title: "Maximum 5 projects a month",
+        text: "We don't mass-produce websites. To keep both speed and quality, we only take on a **limited number of new projects** each month.",
+      },
+    },
+    vouchers: {
+      eyebrow: "Online vouchers",
+      title: "Your website has no opening hours. It works around the clock.",
+      subtitle:
+        "For beauty, head spa, wellness, massage, experience gifts and similar services, we can connect gift voucher sales directly to your website.",
+      steps: ["Customer picks a voucher", "Pays online", "Receives it automatically"],
+      proof: "That's exactly how it works on the Élysée Garden website — **4 vouchers sold in the first month alone**.",
+      proofLink: "See the results ↑",
     },
     testimonials: {
       eyebrow: "Testimonials",
@@ -599,16 +749,32 @@ export const dictionary = {
         {
           question: "Is the inquiry non-binding?",
           answer:
-            "**Yes, both the inquiry and the initial proposal are completely non-binding.** We only discuss price after the proposal is approved.",
+            "**Yes, both the inquiry and the initial proposal are completely non-binding.** Tell us about your business, we'll put together a proposal — and only then do you decide.",
         },
         {
-          question: "How long does building a website take?",
-          answer: "Depending on scope, usually **2–4 weeks** from approving the proposal to launch.",
-        },
-        {
-          question: "How much will the website cost?",
+          question: "What exactly do I get for €1,200?",
           answer:
-            "The price depends on scope — **check the pricing section for approximate ranges** — we always confirm the final amount in advance.",
+            "**A complete custom business website** — structure, custom design, copywriting, forms, basic SEO, technical setup, domain connection, and launch. Scope depends on the specific project, but the price is clear from the start.",
+        },
+        {
+          question: "How does RUSH 48 and RUSH 24 work?",
+          answer:
+            "When it's urgent, we can launch your website **within 48 or 24 hours** of confirming complete materials (+€280 or +€400). It's priority delivery, not a shortcut on quality.",
+        },
+        {
+          question: "What if you miss the agreed launch date?",
+          answer:
+            "We guarantee it. If we miss the date on our side, you get **€200 off** — and another €200 for every additional week of delay that starts.",
+        },
+        {
+          question: "Why do you only take 5 new projects a month?",
+          answer:
+            "To **keep both speed and quality**. We'd rather do fewer projects properly than a lot of projects in a rush.",
+        },
+        {
+          question: "Can you sell online vouchers?",
+          answer:
+            "Yes — mainly for beauty, head spa, wellness, massage, and experience-gift services. The customer **picks a voucher, pays online, and receives it automatically**.",
         },
         {
           question: "Will customers find me on Google?",
@@ -656,6 +822,7 @@ export const dictionary = {
       fieldEmail: "Email *",
       fieldTelefon: "Phone *",
       fieldTelefonPlaceholder: "123 456 789",
+      fieldRush: "I'm interested in RUSH delivery (website in 24–48 hours)",
       fieldZprava: "Message",
       fieldZpravaPlaceholder: "Anything else we should know.",
       sending: "Sending…",
@@ -664,10 +831,11 @@ export const dictionary = {
     },
     proposalCta: {
       eyebrow: "No-obligation inquiry",
-      title: "Want to see what your new website could look like?",
+      title: "Want this kind of website for your business too?",
       subtitle:
-        "Go through three quick steps and tell us your vision. We'll prepare **a no-obligation custom proposal — price comes only after that**.",
-      cta: "Get my website proposal →",
+        "Tell us what your business is about. We'll **put together a complete custom website — you'll know the €1,200 price from day one**.",
+      cta: "Get a free proposal →",
+      ctaSecondary: "Book a short call",
     },
     proposalPage: {
       back: "← Back to webinho.cz",
@@ -680,8 +848,8 @@ export const dictionary = {
       portfolioLink: "I'd like to see your work first ↓",
     },
     footer: {
-      tagline: "The digital business card for your company, that speaks for you.",
-      contact: "Get in touch →",
+      tagline: "A complete business website that works for you around the clock.",
+      contact: "Get a free proposal →",
       terms: "Terms & Conditions",
       privacy: "Privacy Policy",
       cookieSettings: "Cookie settings",
@@ -697,7 +865,7 @@ export const dictionary = {
       terms: {
         title: "Terms & Conditions",
         subtitle: "Applicable to services provided through webinho.cz.",
-        badge: "Draft — payment and complaints terms still to be added",
+        badge: "Draft — complaints terms still to be added",
         sections: [
           {
             heading: "1. Provider",
@@ -713,7 +881,7 @@ export const dictionary = {
           },
           {
             heading: "4. Price and payment terms",
-            body: "The final price depends on the scope of the agreed proposal and is always confirmed by both parties before work begins. [TO BE ADDED: payment terms, due dates, any deposit.]",
+            body: "The price for a complete custom business website is 29,990 CZK (approx. €1,200); the exact scope depends on the project and is always confirmed before work begins. **Payment is split into two parts: 50% before work starts and 50% after the website's final launch.** Express delivery (RUSH 48 / RUSH 24) carries a surcharge of 7,000 CZK or 10,000 CZK respectively, and requires complete materials submitted in advance. If the Provider misses the confirmed launch date, the customer is entitled to a 5,000 CZK discount, plus another 5,000 CZK for every additional week of delay that starts; this guarantee does not cover delays caused by the customer (e.g. missing materials, feedback, or access).",
           },
           {
             heading: "5. Complaints and liability",

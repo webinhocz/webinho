@@ -1,9 +1,9 @@
 "use client";
 
-import { ChevronDown, Handshake, MessageSquareText, PenTool, Rocket } from "lucide-react";
+import { ChevronDown, FileUp, Handshake, MessageSquareText, PenTool, Rocket } from "lucide-react";
 import { useLocale, Rich } from "@/lib/i18n";
 
-const ICONS = [MessageSquareText, PenTool, Handshake, Rocket];
+const ICONS = [MessageSquareText, FileUp, PenTool, Handshake, Rocket];
 
 export default function Process() {
   const { t } = useLocale();
