@@ -35,8 +35,10 @@ export const metadata: Metadata = {
     description,
   },
   verification: {
+    google: "-ezOckEaCfPbtmjXTeTmtwDj-Bk_HxZSNeIAlZXDrgg",
     other: {
-      "seznam-wmt": "LREqvLkNUSxccyYyb6ghAk3jL4Hnmnpt",
+      // older token kept so the existing Seznam verification keeps working
+      "seznam-wmt": ["VpkuLHgqfFK0KcdKBfXfZ0cQR6cc5rpO", "LREqvLkNUSxccyYyb6ghAk3jL4Hnmnpt"],
     },
   },
 };
