@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import { SubmitButton } from "./Button";
 import DialCodeSelect from "./DialCodeSelect";
@@ -47,6 +47,12 @@ export default function ContactForm() {
   const [service, setService] = useState("");
   const [urgent, setUrgent] = useState(false);
   const [dialCode, setDialCode] = useState("+420");
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // the success message is much shorter than the form, so bring it into view
+  useEffect(() => {
+    if (status === "success") successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [status]);
   const [invalid, setInvalid] = useState(false);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -80,7 +86,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="flex min-h-[420px] flex-col items-start justify-center">
+      <div ref={successRef} role="status" className="flex min-h-[420px] flex-col items-start justify-center">
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-blue text-ink">
           <Check className="h-6 w-6" strokeWidth={2.5} />
         </span>
