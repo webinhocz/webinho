@@ -1,35 +1,28 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
+// Inquiries go to Lukáš's inbox; pribyla@webinho.cz is the address shown publicly.
+const INBOX = "pribyla.l@yahoo.com";
+const FROM = "Webinho <noreply@webinho.cz>";
+const LOGO_URL = "https://www.webinho.cz/brand/webinho-logo-white.png";
+
 function escapeHtml(value: unknown): string {
   return String(value ?? "").replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!)
   );
 }
 
-const LOGO_URL = "https://www.webinho.cz/brand/webinho-logo-white.png";
-
-const CONFIRMATION_COPY = {
-  cs: {
-    subject: (jmeno: string) => `Díky za poptávku, ${jmeno}!`,
-    heading: (jmeno: string) => `Díky za poptávku, ${jmeno}!`,
-    body: "Poptávku jsme přijali a už na ní pracujeme. Ozveme se vám co nejdřív s nezávazným návrhem na míru.",
-    meanwhile: "Mezitím se můžete podívat na naše dosavadní práce na",
-    signature: "Tým webinho",
-  },
-  en: {
-    subject: (jmeno: string) => `We've received your inquiry, ${jmeno}!`,
-    heading: (jmeno: string) => `Thanks for reaching out, ${jmeno}!`,
-    body: "We've received your inquiry and we're already working on it. We'll get back to you soon with a no-obligation custom proposal.",
-    meanwhile: "In the meantime, feel free to check out our work at",
-    signature: "The webinho team",
-  },
-} as const;
+function row(label: string, value: string) {
+  return `<tr><td style="padding:10px 0;color:#9a9a9a;width:140px;vertical-align:top;">${label}</td><td style="padding:10px 0;font-weight:600;">${value}</td></tr>`;
+}
 
 export async function POST(req: Request) {
-  const { jmeno, email, telefon, typ_projektu, zprava, locale } = await req.json();
+  const { jmeno, telefon, sluzba, email, zprava, urgentni, web } = await req.json();
 
-  if (!jmeno || !email || !zprava) {
+  // honeypot filled in: pretend success, send nothing
+  if (web) return NextResponse.json({ success: true });
+
+  if (!String(jmeno ?? "").trim() || !String(telefon ?? "").trim() || !String(sluzba ?? "").trim()) {
     return NextResponse.json({ error: "Chybí povinná pole" }, { status: 400 });
   }
 
@@ -38,79 +31,71 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Chyba při odesílání emailu" }, { status: 500 });
   }
 
-  const lang: "cs" | "en" = locale === "en" ? "en" : "cs";
-  const copy = CONFIRMATION_COPY[lang];
-  const safeJmeno = escapeHtml(jmeno);
-  const safeEmail = escapeHtml(email);
-  const safeTelefon = escapeHtml(telefon);
-  const safeTyp = escapeHtml(typ_projektu);
-  const safeZprava = escapeHtml(zprava).replace(/\n/g, "<br>");
+  const hasEmail = typeof email === "string" && /^\S+@\S+\.\S+$/.test(email.trim());
+  const safe = {
+    jmeno: escapeHtml(jmeno),
+    telefon: escapeHtml(telefon),
+    sluzba: escapeHtml(sluzba),
+    email: hasEmail ? escapeHtml(email.trim()) : "",
+    zprava: escapeHtml(zprava).replace(/\n/g, "<br>"),
+  };
 
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    await resend.emails.send({
-      from: "Webinho <noreply@webinho.cz>",
-      to: ["info@webinho.cz"],
-      replyTo: email,
-      subject: `Nová poptávka od ${jmeno}`,
+    // the Resend SDK reports failures in `error` instead of throwing
+    const { error: sendError } = await resend.emails.send({
+      from: FROM,
+      to: [INBOX],
+      replyTo: hasEmail ? email.trim() : undefined,
+      subject: `${urgentni ? "[SPĚCHÁ] " : ""}Nová poptávka: ${sluzba} od ${jmeno}`,
       html: `
-        <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#0b1220;color:#EDEDE7;padding:40px;border-radius:16px;">
-          <h2 style="color:#5b6ef5;margin-bottom:24px;font-size:24px;">Nová zpráva z webinho.cz</h2>
+        <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#010101;color:#FDFDFD;padding:40px;border-radius:16px;">
+          <h2 style="color:#FDFDFD;margin:0 0 24px;font-size:22px;">Nová poptávka z webinho.cz</h2>
           <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
-            <tr>
-              <td style="padding:10px 0;color:#9aa3b5;width:130px;">Jméno</td>
-              <td style="padding:10px 0;font-weight:bold;">${safeJmeno}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px 0;color:#9aa3b5;">Email</td>
-              <td style="padding:10px 0;"><a href="mailto:${safeEmail}" style="color:#5b6ef5;">${safeEmail}</a></td>
-            </tr>
-            <tr>
-              <td style="padding:10px 0;color:#9aa3b5;">Telefon</td>
-              <td style="padding:10px 0;">${safeTelefon || "–"}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px 0;color:#9aa3b5;">Typ projektu</td>
-              <td style="padding:10px 0;">${safeTyp || "–"}</td>
-            </tr>
-            <tr>
-              <td style="padding:10px 0;color:#9aa3b5;">Jazyk formuláře</td>
-              <td style="padding:10px 0;">${lang === "en" ? "EN" : "CS"}</td>
-            </tr>
+            ${row("Jméno", safe.jmeno)}
+            ${row("Telefon", `<a href="tel:${safe.telefon.replace(/\s/g, "")}" style="color:#4d86ff;">${safe.telefon}</a>`)}
+            ${row("S čím pomoct", safe.sluzba)}
+            ${row("Spěchá", urgentni ? "Ano" : "Ne")}
+            ${row("E-mail", safe.email ? `<a href="mailto:${safe.email}" style="color:#4d86ff;">${safe.email}</a>` : "–")}
           </table>
-          <div style="background:#161c2e;border-left:3px solid #5b6ef5;padding:20px;border-radius:8px;">
-            <p style="color:#9aa3b5;font-size:12px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">Zpráva</p>
-            <p style="color:#EDEDE7;line-height:1.6;margin:0;">${safeZprava}</p>
-          </div>
-          <p style="color:#9aa3b5;font-size:12px;margin-top:24px;">Odesláno z kontaktního formuláře webu Webinho</p>
+          ${
+            safe.zprava
+              ? `<div style="background:#080b18;border-left:3px solid #014FFA;padding:20px;border-radius:8px;">
+                  <p style="color:#9a9a9a;font-size:12px;margin:0 0 8px;text-transform:uppercase;letter-spacing:1px;">Zpráva</p>
+                  <p style="line-height:1.6;margin:0;">${safe.zprava}</p>
+                </div>`
+              : ""
+          }
         </div>
       `,
     });
+    if (sendError) throw sendError;
 
-    try {
-      await resend.emails.send({
-        from: "Webinho <noreply@webinho.cz>",
-        to: [email],
-        subject: copy.subject(jmeno),
-        html: `
-          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#06070b;color:#f2f3f7;border-radius:16px;overflow:hidden;">
-            <div style="background-color:#5b6ef5;background-image:linear-gradient(135deg,#5b6ef5,#a855f7);padding:32px 40px;">
-              <img src="${LOGO_URL}" alt="webinho" height="26" style="display:block;border:0;" />
+    if (hasEmail) {
+      try {
+        await resend.emails.send({
+          from: FROM,
+          to: [email.trim()],
+          replyTo: "pribyla@webinho.cz",
+          subject: `Díky za zprávu, ${jmeno}`,
+          html: `
+            <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#010101;color:#FDFDFD;border-radius:16px;overflow:hidden;">
+              <div style="background:#03134E;padding:32px 40px;">
+                <img src="${LOGO_URL}" alt="webinho" height="26" style="display:block;border:0;" />
+              </div>
+              <div style="padding:40px;">
+                <h2 style="margin:0 0 16px;font-size:22px;">Díky za zprávu, ${safe.jmeno}.</h2>
+                <p style="color:#bdbdbd;line-height:1.6;margin:0 0 16px;">Poptávka dorazila. Do 24 hodin se vám ozvu, probereme, co potřebujete, a pak vám připravím nabídku na míru.</p>
+                <p style="color:#bdbdbd;line-height:1.6;margin:0 0 28px;">Pokud to spěchá, zavolejte mi na <a href="tel:+420602557015" style="color:#4d86ff;text-decoration:none;">+420 602 557 015</a>.</p>
+                <p style="font-weight:bold;margin:0;">Lukáš Přibyla, Webinho</p>
+              </div>
             </div>
-            <div style="padding:40px;">
-              <h2 style="color:#f2f3f7;margin:0 0 16px;font-size:22px;">${escapeHtml(copy.heading(jmeno))}</h2>
-              <p style="color:#9aa1b5;line-height:1.6;margin:0 0 16px;">${copy.body}</p>
-              <p style="color:#9aa1b5;line-height:1.6;margin:0 0 28px;">
-                ${copy.meanwhile} <a href="https://www.webinho.cz" style="color:#5b6ef5;text-decoration:none;">webinho.cz</a>.
-              </p>
-              <p style="color:#5b6ef5;font-weight:bold;margin:0;">${copy.signature}</p>
-            </div>
-          </div>
-        `,
-      });
-    } catch (confirmError) {
-      console.error("Resend confirmation email error:", confirmError);
+          `,
+        });
+      } catch (confirmError) {
+        console.error("Resend confirmation email error:", confirmError);
+      }
     }
 
     return NextResponse.json({ success: true });

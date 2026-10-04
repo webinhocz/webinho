@@ -1,21 +1,13 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import CostOfInaction from "@/components/CostOfInaction";
-import Portfolio from "@/components/Portfolio";
-import WhatYouGet from "@/components/WhatYouGet";
-import ElyseeResults from "@/components/ElyseeResults";
-import Process from "@/components/Process";
-import Delivery from "@/components/Delivery";
-import Pricing from "@/components/Pricing";
-import GuaranteeCapacity from "@/components/GuaranteeCapacity";
-import Vouchers from "@/components/Vouchers";
-import OurStory from "@/components/OurStory";
-import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import ProposalCta from "@/components/ProposalCta";
-import Footer from "@/components/Footer";
-import Reveal from "@/components/Reveal";
+import Nav from "@/components/site/Nav";
+import Hero from "@/components/site/Hero";
+import ClientLogos from "@/components/site/ClientLogos";
+import Why from "@/components/site/Why";
+import CaseTeaser from "@/components/site/CaseTeaser";
+import Work from "@/components/site/Work";
+import Urgency from "@/components/site/Urgency";
+import Testimonials from "@/components/site/Testimonials";
+import Contact from "@/components/site/Contact";
+import Footer from "@/components/site/Footer";
 
 export default function Home() {
   return (
@@ -23,48 +15,13 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <Reveal>
-          <CostOfInaction />
-        </Reveal>
-        <Reveal>
-          <ElyseeResults />
-        </Reveal>
-        <Reveal>
-          <Portfolio />
-        </Reveal>
-        <Reveal>
-          <WhatYouGet />
-        </Reveal>
-        <Reveal>
-          <Process />
-        </Reveal>
-        <Reveal>
-          <Delivery />
-        </Reveal>
-        <Reveal>
-          <Pricing />
-        </Reveal>
-        <Reveal>
-          <GuaranteeCapacity />
-        </Reveal>
-        <Reveal>
-          <Vouchers />
-        </Reveal>
-        <Reveal>
-          <OurStory />
-        </Reveal>
-        <Reveal>
-          <Team />
-        </Reveal>
-        <Reveal>
-          <Testimonials />
-        </Reveal>
-        <Reveal>
-          <FAQ />
-        </Reveal>
-        <Reveal>
-          <ProposalCta />
-        </Reveal>
+        <ClientLogos />
+        <Why />
+        <CaseTeaser />
+        <Urgency />
+        <Work />
+        <Testimonials />
+        <Contact />
       </main>
       <Footer />
     </>

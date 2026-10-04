@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import { dictionary, type Locale, type Dictionary } from "./dictionary";
 
 interface LocaleContextValue {
@@ -15,10 +15,7 @@ const STORAGE_KEY = "webinho_locale";
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("cs");
 
-  useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "cs" || stored === "en") setLocaleState(stored);
-  }, []);
+  // Czech only until the EN version of the redesign is ready; a stored "en" choice is ignored for now.
 
   function setLocale(next: Locale) {
     setLocaleState(next);

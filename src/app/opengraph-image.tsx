@@ -21,9 +21,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#06070b",
+          background: "#010101",
           backgroundImage:
-            "radial-gradient(circle at 25% 25%, rgba(91,110,245,0.25), transparent 45%), radial-gradient(circle at 78% 70%, rgba(168,85,247,0.22), transparent 45%)",
+            "radial-gradient(circle at 70% 30%, rgba(3,19,78,0.95), transparent 55%), radial-gradient(circle at 25% 80%, rgba(1,79,250,0.18), transparent 45%)",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,11 +38,11 @@ export default function OpengraphImage() {
           style={{
             marginTop: 4,
             fontSize: 34,
-            color: "#9aa1b5",
+            color: "#bdbdbd",
             fontFamily: "sans-serif",
           }}
         >
-          Digitální vizitka vašeho byznysu, která mluví za vás.
+          Weby, které firmám přivádějí zakázky.
         </div>
       </div>
     ),

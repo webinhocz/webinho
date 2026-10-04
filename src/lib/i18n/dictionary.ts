@@ -404,32 +404,76 @@ export const dictionary = {
     legal: {
       terms: {
         title: "Obchodní podmínky",
-        subtitle: "Platné pro služby poskytované prostřednictvím webu webinho.cz.",
-        badge: "Koncept — čeká na doplnění reklamačních podmínek",
+        subtitle: "Obchodní podmínky pro služby poskytované pod značkou Webinho.",
+        badge: "Účinné od 4. 10. 2026",
         sections: [
           {
-            heading: "1. Provozovatel",
-            body: "**Lukáš Přibyla**, IČO: 23565667, se sídlem Hrnčířská 124/9, Opava, fyzická osoba podnikající dle živnostenského zákona (nezapsaná v obchodním rejstříku), kontaktní e-mail: info@webinho.cz (dále jen „poskytovatel“).",
+            heading: "1. Úvodní ustanovení a provozovatel",
+            body: "Tyto obchodní podmínky (dále jen „podmínky“) upravují v souladu s § 1751 zákona č. 89/2012 Sb., občanský zákoník (dále jen „občanský zákoník“), vzájemná práva a povinnosti při poskytování služeb pod značkou Webinho.\n**Poskytovatel:** Lukáš Přibyla, IČO: 23565667, se sídlem Hrnčířská 124/9, Město, 746 01 Opava, fyzická osoba podnikající na základě živnostenského oprávnění, zapsaná v živnostenském rejstříku, nezapsaná v obchodním rejstříku. Poskytovatel není plátcem DPH.\n**Kontakt:** e-mail pribyla@webinho.cz, telefon +420 602 557 015, web www.webinho.cz.",
           },
           {
-            heading: "2. Předmět služby",
-            body: "Poskytovatel na základě poptávky odeslané přes web webinho.cz zpracuje nezávazný návrh webové prezentace (design, strukturu a orientační rozsah). Realizace zakázky a její finální cena jsou vždy odsouhlaseny se zákazníkem předem, na základě zpracovaného návrhu.",
+            heading: "2. Vymezení pojmů",
+            body: "**Objednatelem** je podnikatel nebo spotřebitel, který s poskytovatelem uzavře smlouvu. **Spotřebitelem** je člověk, který mimo rámec své podnikatelské činnosti uzavírá smlouvu s poskytovatelem.\n**Dílem** se rozumí výsledek služeb poskytovatele sjednaný ve smlouvě, zejména webové stránky, landing page, redesign webu, grafické návrhy, texty, fotografie, videozáznamy, dronové záběry a nastavení služeb třetích stran (například platební brány, analytických a měřicích nástrojů nebo rezervačních systémů).\n**Nabídkou** se rozumí individuální nabídka poskytovatele zaslaná objednateli, zpravidla e-mailem.",
           },
           {
-            heading: "3. Nezávaznost poptávky a návrhu",
-            body: "Odeslání poptávkového formuláře ani zpracování úvodního návrhu nezakládá žádnou smluvní povinnost na straně zákazníka. Ke spolupráci a fakturaci dochází až po vzájemném odsouhlasení rozsahu a ceny.",
+            heading: "3. Poptávka, nabídka a uzavření smlouvy",
+            body: "Odeslání poptávky přes formulář na webu, e-mailem nebo telefonicky je nezávazné a nezakládá žádnou povinnost objednatele.\nNa základě poptávky a případného úvodního hovoru připraví poskytovatel nabídku, která obsahuje zejména rozsah díla, cenu, předpokládaný termín a platební podmínky. Není-li v nabídce uvedeno jinak, platí nabídka 30 dní od jejího odeslání.\nSmlouva je uzavřena okamžikem, kdy objednatel nabídku písemně přijme (postačí e-mail), nebo podpisem samostatné smlouvy. Ujednání v nabídce nebo v samostatné smlouvě mají přednost před těmito podmínkami.",
           },
           {
             heading: "4. Cena a platební podmínky",
-            body: "Cena za kompletní firemní web na míru je 29 990 Kč, konkrétní rozsah se odvíjí od projektu a je vždy potvrzen před zahájením realizace. **Platba probíhá ve dvou částech: 50 % před zahájením prací a 50 % po finálním spuštění webu.** Expresní realizace (RUSH 48 / RUSH 24) je zpoplatněna příplatkem 7 000 Kč, resp. 10 000 Kč, a vyžaduje kompletní podklady dodané předem. Při prodlení ze strany poskytovatele s potvrzeným termínem spuštění náleží zákazníkovi sleva 5 000 Kč a dalších 5 000 Kč za každý další započatý týden zpoždění; tato garance se netýká zpoždění způsobeného zákazníkem (např. nedodanými podklady, feedbackem nebo přístupy).",
+            body: "Cena díla je stanovena individuálně v nabídce. Poskytovatel není plátcem DPH, uvedené ceny jsou proto konečné.\nNení-li v nabídce sjednáno jinak, hradí objednatel **50 % ceny jako zálohu před zahájením prací a zbývajících 50 % po předání díla**. Faktury jsou splatné do 14 dní od vystavení, pokud na faktuře není uvedeno jinak.\nPoskytovatel není povinen zahájit práce před uhrazením zálohy. Je-li objednatel v prodlení s úhradou, může poskytovatel přerušit práce a posunout termín dokončení o dobu prodlení.\nNáklady na služby třetích stran (například doména, hosting, placené licence, šablony, fotobanky, poplatky platebních bran) nejsou součástí ceny díla a hradí je objednatel, není-li v nabídce uvedeno jinak.",
           },
           {
-            heading: "5. Reklamace a odpovědnost",
-            body: "[DOPLNIT dle konkrétních podmínek poskytovatele.]",
+            heading: "5. Součinnost objednatele",
+            body: "Objednatel poskytne poskytovateli včas podklady a součinnost potřebné k provedení díla, zejména texty, loga, fotografie, přístupy ke stávajícím službám a zpětnou vazbu k předloženým návrhům.\nPo dobu, kdy je objednatel v prodlení se součinností, neběží poskytovateli lhůta k dokončení díla.\nObjednatel odpovídá za to, že jím dodané podklady neporušují práva třetích osob, zejména autorská práva a práva k ochranným známkám.",
           },
           {
-            heading: "6. Závěrečná ustanovení",
-            body: "Tyto podmínky se řídí právním řádem České republiky. Poskytovatel si vyhrazuje právo tyto podmínky v přiměřeném rozsahu upravovat.",
+            heading: "6. Termíny a expresní realizace",
+            body: "Termín dokončení je uveden v nabídce. Běžný web zvládá poskytovatel zpravidla do dvou týdnů od dodání kompletních podkladů, konkrétní termín však vždy závisí na rozsahu díla.\nExpresní realizaci v kratším termínu lze sjednat individuálně, pokud to kapacita poskytovatele umožní. Cena za expresní realizaci je uvedena v nabídce.",
+          },
+          {
+            heading: "7. Předání a převzetí díla",
+            body: "Dílo je předáno zpřístupněním objednateli, zpravidla spuštěním webu na doméně objednatele nebo zasláním odkazu na jeho náhled.\nObjednatel je povinen dílo do 5 pracovních dnů od předání zkontrolovat a případné výhrady sdělit poskytovateli e-mailem. Rozsah zahrnutých kol úprav je uveden v nabídce.\nNesdělí-li objednatel v této lhůtě žádné výhrady, nebo začne-li dílo užívat, považuje se dílo za převzaté. Drobné vady, které nebrání užívání díla, nejsou důvodem k odmítnutí převzetí.",
+          },
+          {
+            heading: "8. Práva k dílu a reference",
+            body: "Okamžikem úplného zaplacení ceny poskytuje poskytovatel objednateli oprávnění užívat dílo pro účely, k nimž bylo vytvořeno, a to bez územního a časového omezení. Do úplného zaplacení ceny je objednatel oprávněn užívat dílo pouze se souhlasem poskytovatele.\nSoučásti díla od třetích stran (například open-source knihovny, písma, fotografie z fotobank) se řídí licenčními podmínkami jejich autorů. Obecné know-how, postupy a znovupoužitelné technické komponenty poskytovatele zůstávají poskytovateli.\nPoskytovatel je oprávněn uvádět dílo, jméno nebo logo objednatele ve svých referencích a portfoliu, pokud to objednatel písemně nevyloučí.",
+          },
+          {
+            heading: "9. Fotografie, video a dronové záběry",
+            body: "Pořizování fotografií, videozáznamů a dronových záběrů probíhá v termínu a na místě dohodnutém s objednatelem.\nObjednatel zajistí souhlas vlastníka nebo správce prostor a souhlas osob, které mají být na záběrech zachyceny.\nLety dronem provádí poskytovatel v souladu s platnými leteckými předpisy. Pokud let neumožní počasí, bezpečnost nebo omezení vzdušného prostoru, je poskytovatel oprávněn jej po dohodě s objednatelem přesunout na jiný termín. Pro užívání pořízených záběrů platí ustanovení článku 8.",
+          },
+          {
+            heading: "10. Služby třetích stran",
+            body: "Dílo může využívat služby třetích stran, například hosting, registraci domény, platební bránu Stripe, rezervační systémy, Google Analytics, Meta Pixel nebo Microsoft Clarity. Smluvní vztah k těmto službám vzniká přímo mezi objednatelem a jejich provozovatelem.\nPoskytovatel může objednateli s založením a nastavením těchto služeb pomoci. Neodpovídá však za jejich dostupnost, výpadky, změny funkcí, cen ani obchodních podmínek.",
+          },
+          {
+            heading: "11. Vady díla a reklamace",
+            body: "Objednatel oznámí vady díla poskytovateli bez zbytečného odkladu poté, co je zjistí, a to e-mailem na pribyla@webinho.cz s popisem vady. Objednatel, který je podnikatelem, je povinen vady oznámit nejpozději do 30 dní od předání díla.\nOprávněné vady odstraní poskytovatel bezplatně v přiměřené lhůtě, zpravidla do 14 dní od jejich oznámení.\nZa vady se nepovažují zejména nedostatky způsobené zásahem objednatele nebo třetí osoby do díla, změnami ve službách třetích stran nebo ve webových prohlížečích po předání díla, ani požadavky nad rámec sjednaného rozsahu.\nPráva spotřebitele z vadného plnění se řídí příslušnými ustanoveními občanského zákoníku.",
+          },
+          {
+            heading: "12. Odpovědnost a náhrada škody",
+            body: "Poskytovatel vynakládá maximální úsilí, aby dílo pomohlo objednateli získávat poptávky a zákazníky. **Konkrétní obchodní výsledky, například počet poptávek nebo výši tržeb, však poskytovatel nezaručuje**, protože závisí i na okolnostech mimo jeho vliv.\nVůči objednateli, který je podnikatelem, je celková náhrada škody omezena výší ceny díla podle příslušné smlouvy. Toto omezení se nevztahuje na škodu způsobenou úmyslně nebo z hrubé nedbalosti ani na újmu na přirozených právech člověka.\nPo předání díla odpovídá za zálohování obsahu a za zabezpečení přístupových údajů objednatel, není-li sjednáno jinak.",
+          },
+          {
+            heading: "13. Úpravy po předání a podpora",
+            body: "Úpravy a rozšíření díla po jeho převzetí provádí poskytovatel na základě požadavku objednatele. Rozsah a cenu úprav strany dohodnou předem, případně se řídí dohodnutou sazbou.",
+          },
+          {
+            heading: "14. Odstoupení od smlouvy a ukončení spolupráce",
+            body: "Každá ze stran může od smlouvy odstoupit, poruší-li druhá strana smlouvu podstatným způsobem a nezjedná nápravu ani v přiměřené dodatečné lhůtě.\nUkončí-li objednatel spolupráci bez zavinění poskytovatele, uhradí poskytovateli cenu prací provedených do okamžiku ukončení a účelně vynaložené náklady. Na tuto částku se započte uhrazená záloha.\n**Spotřebitel** má u smlouvy uzavřené distančním způsobem právo odstoupit bez udání důvodu do 14 dnů od jejího uzavření (§ 1829 občanského zákoníku), a to oznámením zaslaným na pribyla@webinho.cz. Požádá-li spotřebitel výslovně o zahájení prací před uplynutím této lhůty a od smlouvy poté odstoupí, uhradí poměrnou část ceny za plnění poskytnuté do odstoupení (§ 1834). Bylo-li dílo s jeho výslovným souhlasem zcela dokončeno před uplynutím lhůty, právo na odstoupení zaniká (§ 1837 písm. a).",
+          },
+          {
+            heading: "15. Mimosoudní řešení spotřebitelských sporů",
+            body: "K mimosoudnímu řešení spotřebitelských sporů ze smlouvy je příslušná Česká obchodní inspekce, Štěpánská 567/15, 120 00 Praha 2, web adr.coi.cz. Spotřebitel může využít také platformu pro řešení sporů online na adrese ec.europa.eu/consumers/odr.",
+          },
+          {
+            heading: "16. Mlčenlivost a osobní údaje",
+            body: "Obě strany zachovají mlčenlivost o přístupových údajích a důvěrných informacích, které se dozvěděly v souvislosti se spoluprací.\nZpracování osobních údajů se řídí stránkou Ochrana osobních údajů na webu www.webinho.cz.",
+          },
+          {
+            heading: "17. Závěrečná ustanovení",
+            body: "Právní vztahy založené smlouvou a těmito podmínkami se řídí právním řádem České republiky.\nPoskytovatel může tyto podmínky v přiměřeném rozsahu měnit. Na smlouvy uzavřené před změnou se použije znění platné v den jejich uzavření.\nJe-li některé ustanovení těchto podmínek neplatné nebo neúčinné, nemá to vliv na platnost ostatních ustanovení.\nTyto podmínky nabývají účinnosti dne 4. 10. 2026.",
           },
         ],
       },
@@ -439,23 +483,23 @@ export const dictionary = {
         sections: [
           {
             heading: "1. Správce osobních údajů",
-            body: "Správcem osobních údajů je **Lukáš Přibyla**, IČO: 23565667, se sídlem Hrnčířská 124/9, Opava, kontaktní e-mail: info@webinho.cz (dále jen „správce“).",
+            body: "Správcem osobních údajů je **Lukáš Přibyla**, IČO: 23565667, se sídlem Hrnčířská 124/9, Opava, kontaktní e-mail: pribyla@webinho.cz (dále jen „správce“).",
           },
           {
             heading: "2. Jaké údaje zpracováváme",
-            body: "Při odeslání poptávkového formuláře zpracováváme jméno, e-mail, telefon a obsah zprávy, které nám dobrovolně poskytnete. Tyto údaje slouží výhradně k tomu, abychom se vám mohli ozvat a připravit nezávazný návrh webu.",
+            body: "Při odeslání poptávkového formuláře zpracováváme jméno, telefon, typ poptávané služby a případně e-mail, informaci o naléhavosti a obsah zprávy, pokud je dobrovolně vyplníte. Tyto údaje slouží výhradně k tomu, abychom se vám mohli ozvat a připravit nabídku na míru. Pokud vyplníte e-mail, pošleme vám na něj i potvrzení o přijetí poptávky.",
           },
           {
             heading: "3. Cookies a měření návštěvnosti",
-            body: "Web používá nezbytné technické cookies pro svůj chod. Dále používáme **Google Analytics 4** pro měření návštěvnosti — tyto cookies se **načtou až po vašem souhlasu** v cookie liště, kdykoliv jej můžete odvolat tlačítkem „Nastavení cookies“ v patičce. V budoucnu plánujeme doplnit i Meta Pixel (měření a cílení reklamních kampaní na Facebooku a Instagramu) — až jej aktivujeme, tuto stránku aktualizujeme.",
+            body: "Web používá nezbytné technické cookies pro svůj chod. Dále používáme **Google Analytics 4** pro měření návštěvnosti. Tyto cookies se **načtou až po vašem souhlasu** v cookie liště, kdykoliv jej můžete odvolat tlačítkem „Nastavení cookies“ v patičce. V budoucnu plánujeme doplnit i Meta Pixel (měření a cílení reklamních kampaní na Facebooku a Instagramu). Až jej aktivujeme, tuto stránku aktualizujeme.",
           },
           {
             heading: "4. Doba uchování a práva subjektu údajů",
-            body: "Údaje z poptávkového formuláře uchováváme po dobu nezbytnou k vyřízení poptávky a případné spolupráce. **Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování a přenositelnost.** Žádosti směřujte na info@webinho.cz.",
+            body: "Údaje z poptávkového formuláře uchováváme po dobu nezbytnou k vyřízení poptávky a případné spolupráce. **Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování a přenositelnost.** Žádosti směřujte na pribyla@webinho.cz.",
           },
           {
             heading: "5. Příjemci údajů",
-            body: "Údaje z formuláře zpracováváme prostřednictvím e-mailové služby Resend za účelem doručení poptávky. Data o návštěvnosti z Google Analytics 4 zpracovává společnost Google (po vašem souhlasu s cookies). Po nasazení Meta Pixelu doplníme informace o zpracování dat i touto službou.",
+            body: "Údaje z formuláře zpracováváme prostřednictvím e-mailové služby Resend, která poptávku doručí do e-mailové schránky správce. Data o návštěvnosti z Google Analytics 4 zpracovává společnost Google (po vašem souhlasu s cookies). Po nasazení Meta Pixelu doplníme informace o zpracování dat i touto službou.",
           },
         ],
       },
@@ -865,23 +909,23 @@ export const dictionary = {
       terms: {
         title: "Terms & Conditions",
         subtitle: "Applicable to services provided through webinho.cz.",
-        badge: "Draft — complaints terms still to be added",
+        badge: "Draft, complaints terms still to be added",
         sections: [
           {
             heading: "1. Provider",
-            body: "**Lukáš Přibyla**, Company ID (IČO): 23565667, registered address Hrnčířská 124/9, Opava, Czech Republic, a sole trader operating under the Czech Trade Licensing Act (not registered in the Commercial Register), contact email: info@webinho.cz (the \"Provider\").",
+            body: "**Lukáš Přibyla**, Company ID (IČO): 23565667, registered address Hrnčířská 124/9, Opava, Czech Republic, a sole trader operating under the Czech Trade Licensing Act (not registered in the Commercial Register), contact email: pribyla@webinho.cz (the \"Provider\").",
           },
           {
             heading: "2. Scope of service",
-            body: "Based on an inquiry submitted through webinho.cz, the Provider prepares a non-binding proposal for a web presence (design, structure, and approximate scope). The final price and execution of the order are always agreed with the customer in advance, based on the prepared proposal.",
+            body: "The Provider designs and builds websites, landing pages and website redesigns, including related integrations and automations. After receiving an inquiry through webinho.cz, by email or by phone, the Provider contacts the customer, clarifies their needs and prepares a custom quote.",
           },
           {
-            heading: "3. Non-binding inquiry and proposal",
-            body: "Submitting the inquiry form or receiving the initial proposal does not create any contractual obligation for the customer. Cooperation and invoicing only begin once both parties have agreed on scope and price.",
+            heading: "3. Non-binding inquiry and quote",
+            body: "Submitting an inquiry or receiving a quote does not create any contractual obligation for the customer. Cooperation and invoicing only begin once both parties have agreed on scope, price and timeline.",
           },
           {
             heading: "4. Price and payment terms",
-            body: "The price for a complete custom business website is 29,990 CZK (approx. €1,200); the exact scope depends on the project and is always confirmed before work begins. **Payment is split into two parts: 50% before work starts and 50% after the website's final launch.** Express delivery (RUSH 48 / RUSH 24) carries a surcharge of 7,000 CZK or 10,000 CZK respectively, and requires complete materials submitted in advance. If the Provider misses the confirmed launch date, the customer is entitled to a 5,000 CZK discount, plus another 5,000 CZK for every additional week of delay that starts; this guarantee does not cover delays caused by the customer (e.g. missing materials, feedback, or access).",
+            body: "Price, scope, timeline and payment terms are set individually for each project and are always stated in the quote approved by the customer before work begins.",
           },
           {
             heading: "5. Complaints and liability",
@@ -899,7 +943,7 @@ export const dictionary = {
         sections: [
           {
             heading: "1. Data controller",
-            body: "The data controller is **Lukáš Přibyla**, Company ID (IČO): 23565667, registered address Hrnčířská 124/9, Opava, Czech Republic, contact email: info@webinho.cz (the \"Controller\").",
+            body: "The data controller is **Lukáš Přibyla**, Company ID (IČO): 23565667, registered address Hrnčířská 124/9, Opava, Czech Republic, contact email: pribyla@webinho.cz (the \"Controller\").",
           },
           {
             heading: "2. What data we process",
@@ -907,11 +951,11 @@ export const dictionary = {
           },
           {
             heading: "3. Cookies and traffic measurement",
-            body: "The website uses essential technical cookies to function. We also use **Google Analytics 4** to measure traffic — these cookies **only load after your consent** in the cookie banner, which you can withdraw at any time via the \"Cookie settings\" button in the footer. We plan to add Meta Pixel in the future (measuring and targeting ad campaigns on Facebook and Instagram) — we'll update this page once it's active.",
+            body: "The website uses essential technical cookies to function. We also use **Google Analytics 4** to measure traffic. These cookies **only load after your consent** in the cookie banner, which you can withdraw at any time via the \"Cookie settings\" button in the footer. We plan to add Meta Pixel in the future (measuring and targeting ad campaigns on Facebook and Instagram). We'll update this page once it's active.",
           },
           {
             heading: "4. Retention period and your rights",
-            body: "We keep inquiry-form data for as long as necessary to handle the inquiry and any resulting cooperation. **You have the right to access, correct, delete, restrict the processing of, and port your data.** Send requests to info@webinho.cz.",
+            body: "We keep inquiry-form data for as long as necessary to handle the inquiry and any resulting cooperation. **You have the right to access, correct, delete, restrict the processing of, and port your data.** Send requests to pribyla@webinho.cz.",
           },
           {
             heading: "5. Recipients of data",

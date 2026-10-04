@@ -1,37 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora, Geist } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import AmbientBackground from "@/components/AmbientBackground";
-import ScrollSpine from "@/components/ScrollSpine";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { LocaleProvider } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin", "latin-ext"],
-});
-
-const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 const description =
-  "Kompletní firemní web na míru za 29 990 Kč. Sbírá poptávky, buduje důvěru a prodává i mimo otevírací dobu. Hotovo do 7 dní, RUSH realizace do 24 hodin.";
+  "Tvorba webů, landing page a redesignů pro firmy z Moravskoslezského kraje i odjinud. Web, který přivádí poptávky a prodává i mimo otevírací dobu. Hotovo obvykle do dvou týdnů.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.webinho.cz"),
-  title: "Webinho | Kompletní firemní web na míru",
+  title: "Webinho | Weby, které firmám přivádějí zakázky",
   description,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Webinho | Kompletní firemní web na míru",
+    title: "Webinho | Weby, které firmám přivádějí zakázky",
     description,
     url: "https://www.webinho.cz",
     siteName: "Webinho",
@@ -40,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webinho | Kompletní firemní web na míru",
+    title: "Webinho | Weby, které firmám přivádějí zakázky",
     description,
   },
   verification: {
@@ -50,8 +41,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Webinho",
+  legalName: "Lukáš Přibyla",
+  url: "https://www.webinho.cz",
+  logo: "https://www.webinho.cz/brand/webinho-logo-white.png",
+  image: "https://www.webinho.cz/opengraph-image",
+  description,
+  email: "pribyla@webinho.cz",
+  telephone: "+420602557015",
+  founder: { "@type": "Person", name: "Lukáš Přibyla" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Hrnčířská 124/9",
+    addressLocality: "Opava",
+    postalCode: "746 01",
+    addressCountry: "CZ",
+  },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Moravskoslezský kraj" },
+    { "@type": "Country", name: "Česká republika" },
+  ],
+  sameAs: ["https://www.facebook.com/webinho.cz", "https://www.instagram.com/webinho.cz"],
+  knowsAbout: ["Tvorba webových stránek", "Landing page", "Redesign webu", "SEO", "Platební brány", "Automatizace"],
+};
+
 export const viewport: Viewport = {
-  themeColor: "#06070b",
+  themeColor: "#010101",
 };
 
 export default function RootLayout({
@@ -62,13 +80,15 @@ export default function RootLayout({
   return (
     <html
       lang="cs"
-      className={cn("dark h-full", inter.variable, sora.variable, "font-sans", geist.variable)}
+      className={`h-full ${manrope.variable}`}
     >
       <body className="min-h-full flex flex-col bg-bg text-ink antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LocaleProvider>
           <GoogleAnalytics />
-          <AmbientBackground />
-          <ScrollSpine />
           {children}
           <CookieConsent />
         </LocaleProvider>
