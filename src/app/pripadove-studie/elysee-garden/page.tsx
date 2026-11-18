@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Plus, X } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import Container from "@/components/site/Container";
@@ -14,67 +14,90 @@ import { CONTACT, TESTIMONIALS } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Případová studie Élysée Garden: 40 000 Kč z poukazů | Webinho",
   description:
-    "Head Spa studio v Opavě prodalo přes web za 3 měsíce dárkové poukazy za více než 40 000 Kč. Majitelku to stálo hodinu času, zbytek jsme zařídili my a prodej běží dál.",
+    "Head Spa studio v Opavě prodalo přes web za 3 měsíce dárkové poukazy za více než 40 000 Kč. Poukazy se prodávají nonstop, i když má studio zavřeno. Majitelku to stálo hodinu času.",
   alternates: { canonical: "/pripadove-studie/elysee-garden" },
 };
 
 const LEAD_TOPIC = "Online poukazy (případová studie)";
 
 const FACTS = [
-  { value: "40 000+ Kč", label: "z poukazů za první 3 měsíce" },
-  { value: "1 hodina", label: "času majitelky za celý projekt" },
-  { value: "0 minut", label: "práce s každým prodaným poukazem" },
-  { value: "Nonstop", label: "prodává, i když má studio zavřeno" },
+  { value: "40 000+ Kč", label: "za první 3 měsíce" },
+  { value: "1 hodina", label: "času majitelky" },
+  { value: "0 minut", label: "práce s každým poukazem" },
+  { value: "Nonstop", label: "i když je zavřeno" },
 ];
 
-const FLOW = [
-  { title: "Vybere a zaplatí", text: "Zákazník si na webu vybere rituál a rovnou ho zaplatí kartou." },
-  { title: "Hned má hotový poukaz", text: "Do e-mailu mu přijde poukaz připravený k vytisknutí. Stačí dopsat jméno obdarovaného." },
-  { title: "Studio má přehled", text: "Studio dostane upozornění o prodeji. Když klient poukaz přinese, hned pozná, že je pravý." },
-];
+const BEFORE = ["Prodej jen v otevírací době", "Poukaz musí někdo ručně vystavit", "Večer a o víkendu nevyděláte nic"];
+const AFTER = ["Web prodává 24/7", "Poukaz se vystaví a odešle sám", "Peníze máte hned, službu dodáte i v klidnějších měsících"];
+
+const VERIFY = ["Je pravý", "Ještě platí", "Nikdo ho nepoužil"];
 
 const OUR_WORK = [
-  "Návrh webu v duchu studia",
-  "Texty, které vysvětlí, proč Head Spa zkusit",
-  "Rituály s cenami a rezervace, na které jsou klientky zvyklé",
-  "Pomoc se založením platební brány",
-  "Automatické vystavení poukazu s evidenčním číslem",
-  "Poukaz v PDF připravený k tisku",
-  "E-maily zákazníkovi i studiu po každém nákupu",
-  "Evidence poukazů a kontrola pravosti",
-  "Nastavení, aby web našli lidé z Opavy a okolí",
-  "Úpravy po spuštění, třeba landing page pro kampaň za 2 pracovní dny",
+  "Web a texty v duchu studia",
+  "Platební brána",
+  "PDF poukaz v barvách studia",
+  "Automatické e-maily zákazníkovi i studiu",
+  "Samostatná evidence poukazů",
+  "Úpravy po spuštění",
 ];
 
-const WHO = ["Kadeřnictví a kosmetika", "Masáže a wellness", "Head Spa a beauty studia", "Restaurace a kavárny", "Zážitky a kurzy", "Fitness a trenéři"];
+const WHO = ["Kadeřnictví a kosmetika", "Masáže a wellness", "Beauty studia", "Restaurace a kavárny", "Zážitky a kurzy", "Fitness"];
 
-const NEXT_STEPS = [
-  "Do 24 hodin vám zavolám.",
-  "Zeptám se, co prodáváte a jak to u vás dnes funguje.",
-  "Řeknu vám na rovinu, jestli a jak by to šlo i u vás.",
+const FAQ = [
+  { q: "Bude to pro mě práce navíc?", a: "Ne. Majitelka Élysée Garden nad tím strávila hodinu. Zbytek připravíme my." },
+  { q: "Jak poznám, že poukaz platí?", a: "Každý má unikátní číslo v evidenci. Hned vidíte, jestli je pravý, platí a nebyl použitý." },
+  { q: "Nebude se to plést s papírovými poukazy?", a: "Ne. Online poukazy mají samostatnou evidenci a vlastní číselnou řadu." },
+  { q: "Bude poukaz vypadat jako náš?", a: "Ano. PDF i e-maily jsou v barvách a s logem vašeho podniku." },
+  { q: "Co když zákazník poukaz ztratí?", a: "Má ho v e-mailu, takže si ho může kdykoli vytisknout znovu." },
+  { q: "Kam jdou peníze?", a: "Přes platební bránu na účet vašeho podniku. Se založením brány pomůžeme." },
+  { q: "Pomůžete i s propagací poukazů?", a: "Ano. Poukazy umíme propagovat třeba placenou reklamou, aby se o nich dozvědělo víc lidí." },
+  { q: "Co když už web mám?", a: "Podíváme se na to v prvním hovoru a řeknu vám, co u vás dává smysl." },
+  { q: "Kolik to stojí a jak dlouho to trvá?", a: "Záleží na tom, co už máte. Cenu řeknu po krátkém hovoru. Hotovo bývá do dvou týdnů." },
 ];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
+const NEXT_STEPS = ["Do 24 hodin vám zavolám.", "Zjistíme, jestli to u vás dává smysl.", "Pak to celé připravím."];
 
 const review = TESTIMONIALS.items[0];
 
-function Block({ id, label, title, children }: { id?: string; label: string; title: string; children: React.ReactNode }) {
+function SectionTitle({ label, title, className }: { label: string; title: string; className?: string }) {
   return (
-    <div id={id}>
-      <Reveal className="grid gap-6 border-t border-line pt-10 lg:grid-cols-[1fr_2fr] lg:gap-16 lg:pt-14">
-        <div>
-          <p className="text-sm font-semibold text-blue">{label}</p>
-          <h2 className="mt-3 text-balance text-2xl font-bold leading-tight tracking-[-0.02em] text-ink lg:text-[2rem]">{title}</h2>
-        </div>
-        <div className="max-w-[64ch] space-y-5 text-[17px] leading-relaxed text-ink-soft lg:text-lg">{children}</div>
-      </Reveal>
+    <div className={className}>
+      <p className="text-sm font-semibold text-blue">{label}</p>
+      <h2 className="mt-3 text-balance text-3xl font-bold leading-tight tracking-[-0.025em] text-ink lg:text-5xl">{title}</h2>
     </div>
   );
 }
+
+function Step({ n, title, visual, children }: { n: number; title: string; visual: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <li className="flex flex-col">
+      <div className="flex items-center justify-center rounded-[var(--radius-card)] bg-ink/[0.04] p-5 ring-1 ring-line sm:p-8 lg:min-h-[440px] lg:p-5">
+        {visual}
+      </div>
+      <p className="mt-6 text-lg font-semibold text-ink">
+        <span className="mr-2 text-sm tabular-nums text-blue">{String(n).padStart(2, "0")}</span>
+        {title}
+      </p>
+      <p className="mt-1.5 text-[16px] leading-relaxed text-ink-soft">{children}</p>
+    </li>
+  );
+}
+
+const shot = "h-auto max-h-[300px] w-auto max-w-full rounded-md shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] lg:max-h-[400px]";
 
 export default function ElyseeCaseStudy() {
   return (
     <>
       <Nav />
       <main className="flex-1">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
         <section className="relative overflow-hidden pt-[120px] lg:pt-[150px]">
           <div
             aria-hidden
@@ -86,26 +109,27 @@ export default function ElyseeCaseStudy() {
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-blue" />
               Případová studie · Élysée Garden, Opava
             </p>
-            <h1 className="mt-6 max-w-[20ch] text-balance text-[2.5rem] font-bold leading-[1.05] tracking-[-0.035em] text-ink sm:text-6xl xl:text-[4.75rem]">
-              Přes 40 000 Kč z poukazů. Majitelku to stálo hodinu času.
+            <h1 className="mt-6 max-w-5xl font-bold tracking-[-0.035em]">
+              <span className="block text-[2.5rem] leading-[1.05] text-ink sm:text-6xl xl:text-[4.75rem]">Přes 40 000 Kč z poukazů.</span>
+              <span className="mt-3 block text-[1.75rem] leading-[1.15] text-blue-hover sm:text-4xl xl:text-5xl">Majitelku to stálo hodinu času.</span>
             </h1>
-            <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-ink-soft lg:text-xl">
-              Head Spa studio paní Stavařové prodává dárkové poukazy přímo na webu, i v noci, kdy má zavřeno. Všechnu práci kolem jsme udělali my a prodej od spuštění běží sám.
+            <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-ink-soft lg:text-xl">
+              Web prodává dárkové poukazy sám. Nonstop, i když má studio zavřeno.
             </p>
-            <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+            <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
               <PrimaryButton href="#ozvu-se" className="h-14 px-7 text-base">
                 Chci to i u sebe
               </PrimaryButton>
               <TextLink href="#jak-to-funguje">Jak to funguje</TextLink>
             </div>
 
-            <dl className="mt-14 grid gap-8 border-t border-line pt-10 sm:grid-cols-2 xl:grid-cols-4">
+            <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-10 xl:grid-cols-4">
               {FACTS.map((f) => (
                 <div key={f.label}>
                   <dt className="sr-only">{f.label}</dt>
                   <dd>
-                    <span className="block whitespace-nowrap text-3xl font-bold tracking-[-0.02em] text-ink lg:text-[2.5rem]">{f.value}</span>
-                    <span className="mt-2 block text-[15px] text-ink-soft">{f.label}</span>
+                    <span className="block whitespace-nowrap text-[1.75rem] font-bold tracking-[-0.02em] text-ink sm:text-3xl lg:text-[2.5rem]">{f.value}</span>
+                    <span className="mt-1.5 block text-[15px] text-ink-soft">{f.label}</span>
                   </dd>
                 </div>
               ))}
@@ -139,53 +163,118 @@ export default function ElyseeCaseStudy() {
         </section>
 
         <section className="section">
-          <Container className="space-y-16 lg:space-y-24">
-            <Block label="Výchozí stav" title="Web jako vizitka. Sám nic neprodával.">
-              <p>
-                Studio mělo jednoduchý web s rezervacemi přes systém Noona. Fungoval jako vizitka, ale nic navíc nepřinášel a nevypadal tak prémiově jako samotné studio.
-              </p>
-              <p>
-                Paní Stavařová chtěla hlavně jedno: prodávat dárkové poukazy, aniž by kvůli tomu musela sedět u telefonu nebo u e-mailu.
-              </p>
-            </Block>
+          <Container className="space-y-20 lg:space-y-28">
+            <Reveal className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-end lg:gap-16">
+              <div>
+                <SectionTitle label="Problém" title="Lidé chtějí nakupovat z pohodlí domova." />
+                <p className="mt-5 max-w-[44ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
+                  Když u vás nejde poukaz koupit hned, koupí dárek jinde. Vy tak přicházíte o desítky tisíc korun.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[var(--radius-card)] bg-ink/[0.03] p-6 ring-1 ring-line">
+                  <p className="text-sm font-semibold text-ink-faint">Bez online poukazů</p>
+                  <ul className="mt-4 space-y-3 text-[16px] leading-snug text-ink-soft">
+                    {BEFORE.map((t) => (
+                      <li key={t} className="flex items-start gap-3">
+                        <X className="mt-0.5 h-4 w-4 shrink-0 text-ink-faint" strokeWidth={2.5} aria-hidden />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-[var(--radius-card)] bg-blue-soft p-6 ring-1 ring-blue/40">
+                  <p className="text-sm font-semibold text-ink">S online poukazy</p>
+                  <ul className="mt-4 space-y-3 text-[16px] leading-snug text-ink">
+                    {AFTER.map((t) => (
+                      <li key={t} className="flex items-start gap-3">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-blue" strokeWidth={2.5} aria-hidden />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Reveal>
 
-            <Block id="jak-to-funguje" label="Jak to funguje" title="Zákazník si poukaz koupí sám. Studio nemusí nic dělat.">
-              <p>
-                Celý nákup od platby po hotový poukaz běží automaticky. Je to ideální dárek na poslední chvíli: večer koupíte, vytisknete a ráno předáte.
-              </p>
-              <ol className="grid gap-6 pt-2 sm:grid-cols-3">
-                {FLOW.map((s, i) => (
-                  <li key={s.title}>
-                    <span className="text-sm font-semibold tabular-nums text-blue">{String(i + 1).padStart(2, "0")}</span>
-                    <p className="mt-2 font-semibold text-ink">{s.title}</p>
-                    <p className="mt-2 text-[16px]">{s.text}</p>
-                  </li>
-                ))}
-              </ol>
-            </Block>
-
-            <div className="space-y-8 border-t border-line pt-10 lg:space-y-10 lg:pt-14">
-              <Reveal className="max-w-4xl">
-                <p className="text-sm font-semibold text-blue">Kolik práce to majitelku stálo</p>
-                <h2 className="mt-3 text-balance text-3xl font-bold leading-tight tracking-[-0.025em] text-ink lg:text-5xl">
-                  Ona strávila hodinu. Všechno ostatní jsme udělali my.
-                </h2>
+            <div id="jak-to-funguje" className="space-y-10 lg:space-y-14">
+              <Reveal>
+                <SectionTitle label="Jak to funguje" title="Zákazník zaplatí. Zbytek se stane sám." className="max-w-4xl" />
               </Reveal>
 
-              <Reveal className="grid gap-4 xl:grid-cols-[1fr_1.7fr]">
-                <div className="relative isolate flex flex-col justify-between overflow-hidden rounded-[var(--radius-media)] p-8 sm:p-10">
+              <Reveal>
+                <ol className="grid gap-10 lg:grid-cols-3 lg:gap-6">
+                  <Step
+                    n={1}
+                    title="E-mail pro zákazníka"
+                    visual={
+                      <Image
+                        src="/portfolio/elysee-poukaz-email.jpg"
+                        alt="E-mail pro zákazníka s evidenčním číslem EG-1001 a návodem, jak poukaz uplatnit"
+                        width={568}
+                        height={593}
+                        sizes="(min-width: 1024px) 30vw, 90vw"
+                        className={shot}
+                      />
+                    }
+                  >
+                    Evidenční číslo a návod, jak poukaz uplatnit.
+                  </Step>
+                  <Step
+                    n={2}
+                    title="PDF poukaz ve vaší značce"
+                    visual={
+                      <Image
+                        src="/portfolio/elysee-poukaz-pdf.jpg"
+                        alt="Dárkový poukaz v PDF v barvách Élysée Garden s kolonkami Pro a Od a evidenčním číslem EG-1001"
+                        width={798}
+                        height={562}
+                        sizes="(min-width: 1024px) 30vw, 90vw"
+                        className={shot}
+                      />
+                    }
+                  >
+                    Vytiskne, dopíše jméno a dárek má hotový do 10 minut.
+                  </Step>
+                  <Step n={3} title="Upozornění pro vás" visual={<VoucherCard className="max-w-[300px]" />}>
+                    Hned vidíte, co se prodalo, komu a za kolik.
+                  </Step>
+                </ol>
+              </Reveal>
+
+              <Reveal className="flex flex-col gap-6 rounded-[var(--radius-media)] bg-surface p-7 ring-1 ring-line sm:p-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+                <div>
+                  <p className="text-xl font-bold text-ink lg:text-2xl">Vlastní evidence online poukazů</p>
+                  <p className="mt-2 text-[16px] text-ink-soft">Oddělená od papírových, s vlastní číselnou řadou. Podle čísla hned víte:</p>
+                </div>
+                <ul className="flex flex-wrap gap-x-8 gap-y-3">
+                  {VERIFY.map((v) => (
+                    <li key={v} className="flex items-center gap-3 text-lg font-semibold text-ink">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue">
+                        <Check className="h-4 w-4 text-ink" strokeWidth={3} aria-hidden />
+                      </span>
+                      {v}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
+
+            <div className="space-y-8 lg:space-y-10">
+              <Reveal>
+                <SectionTitle label="Kolik práce to majitelku stálo" title="Ona strávila hodinu. Zbytek jsme zařídili my." className="max-w-4xl" />
+              </Reveal>
+
+              <Reveal className="grid gap-4 lg:grid-cols-[1fr_1.4fr]">
+                <div className="relative isolate overflow-hidden rounded-[var(--radius-media)] p-8 sm:p-10">
                   <div
                     aria-hidden
                     className="absolute inset-0 -z-10"
                     style={{ background: "linear-gradient(135deg, #020c33 0%, #03134e 60%, #014ffa 140%)" }}
                   />
                   <p className="text-sm font-semibold text-ink-soft">Čas majitelky</p>
-                  <div className="mt-10">
-                    <p className="whitespace-nowrap text-6xl font-bold tracking-[-0.04em] text-ink sm:text-7xl 2xl:text-8xl">1 hodina</p>
-                    <p className="mt-4 max-w-[34ch] text-[17px] leading-relaxed text-ink-soft">
-                      Za celý projekt, od první domluvy po spuštění. Nemusela se učit nic technického.
-                    </p>
-                  </div>
+                  <p className="mt-6 whitespace-nowrap text-6xl font-bold tracking-[-0.04em] text-ink sm:text-7xl">1 hodina</p>
+                  <p className="mt-3 text-[16px] text-ink-soft">za celý projekt</p>
                 </div>
 
                 <div className="rounded-[var(--radius-media)] bg-surface p-8 ring-1 ring-line sm:p-10">
@@ -198,9 +287,6 @@ export default function ElyseeCaseStudy() {
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-8 border-t border-line pt-6 text-[16px] leading-relaxed text-ink-soft">
-                    Platba, poukaz, e-maily i evidence musí fungovat jako jeden celek, ve dne i ve tři ráno. Když jedna věc vypadne, zákazník zaplatí a poukaz nedostane. Proto to celé stavíme a hlídáme my. Majitelka jen vidí, jak chodí prodeje.
-                  </p>
                 </div>
               </Reveal>
             </div>
@@ -214,13 +300,17 @@ export default function ElyseeCaseStudy() {
               <div>
                 <p className="text-sm font-semibold text-ink-soft">Výsledek</p>
                 <p className="mt-4 text-balance text-3xl font-bold leading-tight tracking-[-0.025em] text-ink sm:text-4xl lg:text-5xl">
-                  Přes 40 000 Kč za první 3 měsíce. A poukazy se prodávají dál.
+                  Přes 40 000 Kč za 3 měsíce. A prodává se dál.
                 </p>
-                <p className="mt-6 max-w-[52ch] text-[17px] leading-relaxed text-ink-soft">
-                  Upozornění na každý prodej chodí i nám, takže vidíme, kdy lidé nakupují: často v deset, jedenáct nebo dvanáct večer, kdy má studio dávno zavřeno. Systém od spuštění běží sám a studio dostává peníze předem, ještě než klient přijde na rituál.
+                <p className="mt-5 max-w-[46ch] text-[17px] leading-relaxed text-ink-soft">
+                  Lidé nakupují často v deset, jedenáct i dvanáct večer. Studio má peníze hned a službu odvede, až se klient objedná. Prodej navíc podporuje placená reklama, s tou umíme pomoct i vám.
                 </p>
               </div>
-              <VoucherCard className="mx-auto lg:mx-0 lg:justify-self-end" />
+              <div className="lg:justify-self-end">
+                <p className="text-sm font-semibold text-ink-soft">Jeden ze skutečných nákupů</p>
+                <p className="mt-2 text-7xl font-bold tabular-nums tracking-[-0.04em] text-ink lg:text-8xl">22:06</p>
+                <p className="mt-3 text-[15px] text-ink-soft">studio mělo dávno zavřeno</p>
+              </div>
             </Reveal>
 
             <div id="ozvu-se">
@@ -230,14 +320,14 @@ export default function ElyseeCaseStudy() {
                   <h2 className="mt-3 text-balance text-3xl font-bold leading-tight tracking-[-0.025em] text-ink lg:text-[2.75rem]">
                     Šlo by to i u vás?
                   </h2>
-                  <p className="mt-5 max-w-[48ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
-                    Nechte mi jméno a telefon. Ozvu se, zeptám se na pár věcí o vašem podnikání a řeknu vám na rovinu, jestli by vám online poukazy vydělávaly.
+                  <p className="mt-5 max-w-[42ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
+                    Nechte mi číslo. Ozvu se vám a řeknu na rovinu, jestli by se vám to vyplatilo.
                   </p>
-                  <ul className="mt-8 grid gap-3 text-[16px] text-ink">
-                    {["Hovor je nezávazný", "Nemusíte nic připravovat", "Když to u vás nedává smysl, řeknu vám to"].map((t) => (
-                      <li key={t} className="flex items-center gap-3">
-                        <Check className="h-4 w-4 shrink-0 text-blue" strokeWidth={2.5} aria-hidden />
-                        {t}
+                  <p className="mt-8 text-sm font-semibold text-ink-soft">Funguje třeba pro</p>
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {WHO.map((w) => (
+                      <li key={w} className="rounded-full bg-ink/[0.05] px-3.5 py-1.5 text-[14px] text-ink ring-1 ring-line">
+                        {w}
                       </li>
                     ))}
                   </ul>
@@ -246,23 +336,27 @@ export default function ElyseeCaseStudy() {
               </Reveal>
             </div>
 
-            <Block label="Pro koho to dává smysl" title="Prodáváte službu, kterou jde darovat?">
-              <p>
-                Pak pro vás funguje stejný princip. Poukaz si lidé koupí, když na dárek myslí, typicky večer na gauči. Pokud ho v tu chvíli nejde koupit online, odejdou jinam.
-              </p>
-              <ul className="flex flex-wrap gap-2.5 pt-1">
-                {WHO.map((w) => (
-                  <li key={w} className="rounded-full bg-ink/[0.05] px-4 py-2 text-[15px] text-ink ring-1 ring-line">
-                    {w}
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-4">
-                <PrimaryButton href="#kontakt">Zjistit, jestli to půjde u mě</PrimaryButton>
+            <Reveal className="grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-16">
+              <div>
+                <p className="text-sm font-semibold text-blue">Časté otázky</p>
+                <h2 className="mt-3 text-balance text-2xl font-bold leading-tight tracking-[-0.02em] text-ink lg:text-[2rem]">
+                  Na co se ptají majitelé
+                </h2>
               </div>
-            </Block>
+              <div className="max-w-[72ch] border-t border-line">
+                {FAQ.map((f) => (
+                  <details key={f.q} className="group border-b border-line [&_summary::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[17px] font-semibold text-ink lg:text-lg">
+                      {f.q}
+                      <Plus className="h-5 w-5 shrink-0 text-blue transition-transform duration-200 group-open:rotate-45" aria-hidden />
+                    </summary>
+                    <p className="-mt-1 pb-6 pr-10 text-[16px] leading-relaxed text-ink-soft lg:text-[17px]">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </Reveal>
 
-            <Reveal className="grid gap-6 border-t border-line pt-10 lg:grid-cols-[1fr_2fr] lg:gap-16 lg:pt-14">
+            <Reveal className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-16">
               <div>
                 <p className="text-sm font-semibold text-blue">Recenze</p>
                 <h2 className="mt-3 text-balance text-2xl font-bold leading-tight tracking-[-0.02em] text-ink lg:text-[2rem]">Co říká majitelka</h2>
@@ -282,25 +376,22 @@ export default function ElyseeCaseStudy() {
             <div>
               <p className="text-sm font-semibold text-blue">Kontakt</p>
               <h2 className="mt-3 text-balance text-3xl font-bold leading-tight tracking-[-0.025em] text-ink lg:text-5xl">
-                Chcete poukazy, které se prodávají samy?
+                Chcete, aby vám poukazy prodával web?
               </h2>
-              <p className="mt-5 max-w-[48ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
-                Nechte mi jméno a telefon. Ozvu se a společně zjistíme, jestli by to šlo i u vás.
+              <p className="mt-5 max-w-[42ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
+                Nechte mi jméno a číslo. Ozvu se vám a zbytek zařídím.
               </p>
 
-              <div className="mt-12">
-                <p className="text-sm font-semibold text-ink">Co se stane dál</p>
-                <ol className="mt-5 grid gap-4">
-                  {NEXT_STEPS.map((s, i) => (
-                    <li key={s} className="flex items-baseline gap-4 text-[16px] text-ink-soft">
-                      <span className="text-sm font-semibold tabular-nums text-blue">{String(i + 1).padStart(2, "0")}</span>
-                      {s}
-                    </li>
-                  ))}
-                </ol>
-              </div>
+              <ol className="mt-10 grid gap-4">
+                {NEXT_STEPS.map((s, i) => (
+                  <li key={s} className="flex items-baseline gap-4 text-[16px] text-ink-soft">
+                    <span className="text-sm font-semibold tabular-nums text-blue">{String(i + 1).padStart(2, "0")}</span>
+                    {s}
+                  </li>
+                ))}
+              </ol>
 
-              <div className="mt-12 flex items-center gap-5">
+              <div className="mt-10 flex items-center gap-5">
                 <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-1 ring-line">
                   <Image src={CONTACT.photo} alt={CONTACT.person} fill sizes="80px" className="object-cover object-[50%_25%]" />
                 </div>

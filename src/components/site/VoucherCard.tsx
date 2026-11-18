@@ -2,9 +2,11 @@ import { cn } from "@/lib/utils";
 
 // Anonymised copy of a real purchase notification from elyseegarden.cz (3. 9. 2026).
 const ROWS = [
+  ["Evidenční číslo", "EG-1012"],
   ["Poukaz", "Relax (1 500 Kč)"],
   ["Den nákupu", "3. září 2026 v 22:06"],
   ["Zákazník", "V. N."],
+  ["E-mail zákazníka", "v•••@gmail.com"],
   ["Částka", "1 500 Kč"],
 ];
 
