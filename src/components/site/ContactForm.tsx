@@ -6,6 +6,7 @@ import { SubmitButton } from "./Button";
 import DialCodeSelect from "./DialCodeSelect";
 import { CONTACT, CONTACT_SECTION, SERVICES } from "@/lib/content";
 import { cn } from "@/lib/utils";
+import { leadSource, rememberCampaign, trackLead } from "@/lib/tracking";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -49,6 +50,8 @@ export default function ContactForm() {
   const [dialCode, setDialCode] = useState("+420");
   const successRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => rememberCampaign(), []);
+
   // the success message is much shorter than the form, so bring it into view
   useEffect(() => {
     if (status === "success") successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -71,9 +74,10 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, telefon: `${dialCode} ${data.telefon.trim()}`, sluzba: service, urgentni: urgent }),
+        body: JSON.stringify({ ...data, telefon: `${dialCode} ${data.telefon.trim()}`, sluzba: service, urgentni: urgent, zdroj: leadSource("kontaktni-formular") }),
       });
       if (!res.ok) throw new Error("send failed");
+      trackLead("kontaktni-formular");
       setStatus("success");
       form.reset();
       setService("");

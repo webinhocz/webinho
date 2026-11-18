@@ -396,7 +396,7 @@ export const dictionary = {
       rights: "Všechna práva vyhrazena.",
     },
     cookieConsent: {
-      text: "Používáme cookies pro fungování webu a měření návštěvnosti. Více v",
+      text: "Používáme cookies pro fungování webu, měření návštěvnosti a reklamu na Facebooku a Instagramu. Více v",
       linkText: "ochraně osobních údajů",
       essential: "Pouze nezbytné",
       acceptAll: "Přijmout vše",
@@ -487,11 +487,11 @@ export const dictionary = {
           },
           {
             heading: "2. Jaké údaje zpracováváme",
-            body: "Při odeslání poptávkového formuláře zpracováváme jméno, telefon, typ poptávané služby a případně e-mail, informaci o naléhavosti a obsah zprávy, pokud je dobrovolně vyplníte. Tyto údaje slouží výhradně k tomu, abychom se vám mohli ozvat a připravit nabídku na míru. Pokud vyplníte e-mail, pošleme vám na něj i potvrzení o přijetí poptávky.",
+            body: "Při odeslání poptávkového formuláře zpracováváme jméno, telefon, typ poptávané služby, stránku, ze které poptávku posíláte (včetně označení reklamní kampaně v odkazu, pokud jste přišli z reklamy), a případně e-mail, informaci o naléhavosti a obsah zprávy, pokud je dobrovolně vyplníte. Tyto údaje slouží výhradně k tomu, abychom se vám mohli ozvat a připravit nabídku na míru. Pokud vyplníte e-mail, pošleme vám na něj i potvrzení o přijetí poptávky.",
           },
           {
             heading: "3. Cookies a měření návštěvnosti",
-            body: "Web používá nezbytné technické cookies pro svůj chod. Dále používáme **Google Analytics 4** pro měření návštěvnosti. Tyto cookies se **načtou až po vašem souhlasu** v cookie liště, kdykoliv jej můžete odvolat tlačítkem „Nastavení cookies“ v patičce. V budoucnu plánujeme doplnit i Meta Pixel (měření a cílení reklamních kampaní na Facebooku a Instagramu). Až jej aktivujeme, tuto stránku aktualizujeme.",
+            body: "Web používá nezbytné technické cookies pro svůj chod. Dále používáme **Google Analytics 4** pro měření návštěvnosti a **Meta Pixel** pro měření a cílení reklamních kampaní na Facebooku a Instagramu (například zda návštěvník z reklamy odeslal poptávku). Tyto nástroje se **načtou až po vašem souhlasu** v cookie liště („Přijmout vše“), kdykoliv jej můžete odvolat tlačítkem „Nastavení cookies“ v patičce.",
           },
           {
             heading: "4. Doba uchování a práva subjektu údajů",
@@ -499,7 +499,7 @@ export const dictionary = {
           },
           {
             heading: "5. Příjemci údajů",
-            body: "Údaje z formuláře zpracováváme prostřednictvím e-mailové služby Resend, která poptávku doručí do e-mailové schránky správce. Data o návštěvnosti z Google Analytics 4 zpracovává společnost Google (po vašem souhlasu s cookies). Po nasazení Meta Pixelu doplníme informace o zpracování dat i touto službou.",
+            body: "Údaje z formuláře zpracováváme prostřednictvím e-mailové služby Resend, která poptávku doručí do e-mailové schránky správce. Data o návštěvnosti z Google Analytics 4 zpracovává společnost Google a data z Meta Pixelu společnost Meta Platforms Ireland Ltd., vždy jen po vašem souhlasu s cookies.",
           },
         ],
       },
@@ -900,7 +900,7 @@ export const dictionary = {
       rights: "All rights reserved.",
     },
     cookieConsent: {
-      text: "We use cookies to run the website and measure traffic. More in our",
+      text: "We use cookies to run the website, measure traffic and run ads on Facebook and Instagram. More in our",
       linkText: "privacy policy",
       essential: "Essential only",
       acceptAll: "Accept all",
@@ -947,11 +947,11 @@ export const dictionary = {
           },
           {
             heading: "2. What data we process",
-            body: "When you submit the inquiry form, we process the name, email, phone number, and message content you voluntarily provide. This data is used solely so we can get back to you and prepare a non-binding website proposal.",
+            body: "When you submit the inquiry form, we process the name, phone number, email and message content you voluntarily provide, plus the page you send it from (including the ad campaign tag in the link if you came from an ad). This data is used solely so we can get back to you and prepare a non-binding website proposal.",
           },
           {
             heading: "3. Cookies and traffic measurement",
-            body: "The website uses essential technical cookies to function. We also use **Google Analytics 4** to measure traffic. These cookies **only load after your consent** in the cookie banner, which you can withdraw at any time via the \"Cookie settings\" button in the footer. We plan to add Meta Pixel in the future (measuring and targeting ad campaigns on Facebook and Instagram). We'll update this page once it's active.",
+            body: "The website uses essential technical cookies to function. We also use **Google Analytics 4** to measure traffic and **Meta Pixel** to measure and target ad campaigns on Facebook and Instagram (for example, whether a visitor from an ad sent an inquiry). These tools **only load after your consent** in the cookie banner (\"Accept all\"), which you can withdraw at any time via the \"Cookie settings\" button in the footer.",
           },
           {
             heading: "4. Retention period and your rights",
@@ -959,7 +959,7 @@ export const dictionary = {
           },
           {
             heading: "5. Recipients of data",
-            body: "We process form data through the Resend email service to deliver inquiries. Google processes traffic data from Google Analytics 4 (once you've consented to cookies). Once Meta Pixel is deployed, we'll add information about that processing too.",
+            body: "We process form data through the Resend email service to deliver inquiries. Google processes traffic data from Google Analytics 4 and Meta Platforms Ireland Ltd. processes data from Meta Pixel, in both cases only once you've consented to cookies.",
           },
         ],
       },

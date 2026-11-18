@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import MetaPixel from "@/components/MetaPixel";
 import { LocaleProvider } from "@/lib/i18n";
 
 const manrope = Manrope({
@@ -39,6 +40,8 @@ export const metadata: Metadata = {
     other: {
       // older token kept so the existing Seznam verification keeps working
       "seznam-wmt": ["VpkuLHgqfFK0KcdKBfXfZ0cQR6cc5rpO", "LREqvLkNUSxccyYyb6ghAk3jL4Hnmnpt"],
+      // Meta Business portfolio "Webinho" domain verification
+      "facebook-domain-verification": "vwy0b9gvhkol68hsqkqu023ac7bw1a",
     },
   },
 };
@@ -91,6 +94,7 @@ export default function RootLayout({
         />
         <LocaleProvider>
           <GoogleAnalytics />
+          <MetaPixel />
           {children}
           <CookieConsent />
         </LocaleProvider>

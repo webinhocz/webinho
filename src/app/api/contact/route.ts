@@ -17,7 +17,7 @@ function row(label: string, value: string) {
 }
 
 export async function POST(req: Request) {
-  const { jmeno, telefon, sluzba, email, zprava, urgentni, web } = await req.json();
+  const { jmeno, telefon, sluzba, email, zprava, urgentni, zdroj, web } = await req.json();
 
   // honeypot filled in: pretend success, send nothing
   if (web) return NextResponse.json({ success: true });
@@ -38,6 +38,8 @@ export async function POST(req: Request) {
     sluzba: escapeHtml(sluzba),
     email: hasEmail ? escapeHtml(email.trim()) : "",
     zprava: escapeHtml(zprava).replace(/\n/g, "<br>"),
+    // page + UTM tags, so an inquiry can be traced back to the ad that brought it
+    zdroj: escapeHtml(String(zdroj ?? "").slice(0, 400)),
   };
 
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -58,6 +60,7 @@ export async function POST(req: Request) {
             ${row("S čím pomoct", safe.sluzba)}
             ${row("Spěchá", urgentni ? "Ano" : "Ne")}
             ${row("E-mail", safe.email ? `<a href="mailto:${safe.email}" style="color:#4d86ff;">${safe.email}</a>` : "–")}
+            ${safe.zdroj ? row("Odkud", safe.zdroj) : ""}
           </table>
           ${
             safe.zprava
