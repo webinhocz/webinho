@@ -3,7 +3,7 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { CONSENT_KEY, META_PIXEL_ID } from "@/lib/tracking";
+import { CONSENT_KEY, META_PIXEL_ID, trackContact } from "@/lib/tracking";
 
 // CookieConsent saves the choice to localStorage, then fires this event
 function subscribe(onChange: () => void) {
@@ -28,6 +28,16 @@ export default function MetaPixel() {
   const pathname = usePathname();
   const allowed = useSyncExternalStore(subscribe, hasConsent, () => false);
   const trackedPath = useRef<string | null>(null);
+
+  // phone and e-mail links sit in many components, so one listener reports them all
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const href = (e.target as Element | null)?.closest?.("a[href^='tel:'], a[href^='mailto:']")?.getAttribute("href");
+      if (href) trackContact(href.startsWith("tel:") ? "telefon" : "email");
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   // the script cannot be unloaded once it ran, so tell it to stop or resume
   useEffect(() => {

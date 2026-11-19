@@ -8,7 +8,8 @@ import Container from "./Container";
 import { PrimaryButton } from "./Button";
 import { CONTACT, NAV } from "@/lib/content";
 
-export default function Nav() {
+/** `ctaHref` lets a landing page point the header button at its own form instead of /kontakt. */
+export default function Nav({ ctaHref = "/kontakt" }: { ctaHref?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -52,7 +53,7 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <PrimaryButton href="/kontakt" onClick={close} className="h-11 px-4 sm:px-5">
+          <PrimaryButton href={ctaHref} onClick={close} className="h-11 px-4 sm:px-5">
             <span className="sm:hidden">{NAV.ctaShort}</span>
             <span className="hidden sm:inline">{NAV.cta}</span>
           </PrimaryButton>

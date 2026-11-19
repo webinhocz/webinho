@@ -52,3 +52,10 @@ export function trackLead(source: string) {
   window.fbq?.("track", "Lead", { content_name: source });
   window.gtag?.("event", "generate_lead", { form_source: source });
 }
+
+/** Reports a tap on the phone number or e-mail address (a call from an ad is a lead too). Needs consent, like trackLead. */
+export function trackContact(method: "telefon" | "email") {
+  const page = window.location.pathname;
+  window.fbq?.("track", "Contact", { content_name: method, content_category: page });
+  window.gtag?.("event", "contact_click", { method, page });
+}

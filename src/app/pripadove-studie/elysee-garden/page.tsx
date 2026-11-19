@@ -7,15 +7,30 @@ import Container from "@/components/site/Container";
 import Reveal from "@/components/site/Reveal";
 import VoucherCard from "@/components/site/VoucherCard";
 import LeadForm from "@/components/site/LeadForm";
+import ChristmasNote from "@/components/site/ChristmasNote";
 import { PrimaryButton, TextLink } from "@/components/site/Button";
 import { TestimonialCard } from "@/components/site/Testimonials";
 import { CONTACT, TESTIMONIALS } from "@/lib/content";
 
+const title = "Případová studie Élysée Garden: 40 000 Kč z poukazů | Webinho";
+const description =
+  "Head Spa studio v Opavě prodalo přes web za 3 měsíce dárkové poukazy za více než 40 000 Kč. Poukazy se prodávají nonstop, i když má studio zavřeno. Majitelku to stálo hodinu času.";
+
 export const metadata: Metadata = {
-  title: "Případová studie Élysée Garden: 40 000 Kč z poukazů | Webinho",
-  description:
-    "Head Spa studio v Opavě prodalo přes web za 3 měsíce dárkové poukazy za více než 40 000 Kč. Poukazy se prodávají nonstop, i když má studio zavřeno. Majitelku to stálo hodinu času.",
+  title,
+  description,
   alternates: { canonical: "/pripadove-studie/elysee-garden" },
+  // without this, link previews (Messenger, WhatsApp) show the homepage title and URL
+  openGraph: {
+    title,
+    description,
+    url: "/pripadove-studie/elysee-garden",
+    siteName: "Webinho",
+    locale: "cs_CZ",
+    type: "article",
+    images: [{ url: "/portfolio/elysee-garden-desktop.jpg", alt: "Web Élysée Garden Studio, který prodává dárkové poukazy" }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: ["/portfolio/elysee-garden-desktop.jpg"] },
 };
 
 const LEAD_TOPIC = "Online poukazy (případová studie)";
@@ -94,7 +109,7 @@ const shot = "h-auto max-h-[300px] w-auto max-w-full rounded-md shadow-[0_20px_5
 export default function ElyseeCaseStudy() {
   return (
     <>
-      <Nav />
+      <Nav ctaHref="#ozvu-se" />
       <main className="flex-1">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
@@ -323,6 +338,7 @@ export default function ElyseeCaseStudy() {
                   <p className="mt-5 max-w-[42ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
                     Nechte mi číslo. Ozvu se vám a řeknu na rovinu, jestli by se vám to vyplatilo.
                   </p>
+                  <ChristmasNote className="mt-6 max-w-[42ch]" />
                   <p className="mt-8 text-sm font-semibold text-ink-soft">Funguje třeba pro</p>
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {WHO.map((w) => (
@@ -381,6 +397,7 @@ export default function ElyseeCaseStudy() {
               <p className="mt-5 max-w-[42ch] text-[17px] leading-relaxed text-ink-soft lg:text-lg">
                 Nechte mi jméno a číslo. Ozvu se vám a zbytek zařídím.
               </p>
+              <ChristmasNote className="mt-6 max-w-[42ch]" />
 
               <ol className="mt-10 grid gap-4">
                 {NEXT_STEPS.map((s, i) => (
